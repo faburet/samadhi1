@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SAMADHI YOGA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <header>
+      <!--Titulos y logo para Desktop-->
+      <div>
+        <img
+          src="img/klipartz2.png"
+          id="logo-principal0"
+          alt="logo principal de escuela de yoga" />
+        <div class="name">
+          <span>SAMADHI YOGA</span>
+          <p>Union cuerpo-mente-alma</p>
+        </div>
+
+        <div id="search">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 search-input"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search" />
+            <button class="btn btn-outline-danger search-boton" type="submit">
+              Buscar
+            </button>
+          </form>
+        </div>
+      </div>
+      <!--fin de titulos para desktop-->
+
+      <!--comienzo de la navbar de BOOSTRAP en movil-->
+
+      <nav class="navbar navbar-expand-lg bg-menu ms-0 mt-0">
+        <div class="container-fluid">
+          <a id="imagen-menu" href="#"
+            ><img
+              class="logo-principal"
+              src="img/logo_principal3.png"
+              alt="silueta de hombre meditando frente al sol"
+          /></a>
+
+          <div class="name">
+            <span>SAMADHI YOGA</span>
+          </div>
+          <!--boton de la barra posicionado arriba a la derecha en movil-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <!--"todos los "aria" son para mejorar la accesibilidad, no cambia la funcionalidad!-->
+            <!--"aria-controls" asocia semanticamene el elemento al boton-->
+          </button>
+          <!--fin del boton de menú-->
+
+          <!--contenido de opciones del menú-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <p id="subname-Mb">Union cuerpo-mente-alma</p>
+            <ul class="navbar-nav me-auto mb-0 mb-lg-2 navbar-propio">
+              <li class="nav-item navitem-propio">
+                <a
+                  id="current"
+                  class="nav-link active navlink-propio"
+                  aria-current="page"
+                  href="index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown navitem-propio">
+                <a
+                  class="nav-link dropdown-toggle navlink-propio"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Historia
+                </a>
+                <!-- menu dropdown-->
+                <ul class="dropdown-menu bg-menu">
+                  <li>
+                    <a class="dropdown-item" href="pages/nosotros.html"
+                      >Sobre Nosotros</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#info-escuela">Escuela</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Hatha Yoga</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Kriya Yoga</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- fin de menú dropdown-->
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="pages/profesorado.html"
+                  >Curso Profesorado</a
+                >
+              </li>
+              <li class="nav-item navitem-propio">
+                <a
+                  class="nav-link navlink-propio"
+                  href="pages/instructorado.html"
+                  >Curso Instructorado</a
+                >
+              </li>
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="#"
+                  >Iniciacion Kriya Yoga</a
+                >
+              </li>
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="#">Tienda</a>
+              </li>
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="pages/contacto.html"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+            <!--comienzo de la estructura de input y boton de busqueda-->
+            <div class="busqueda">
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search" />
+                <button class="btn btn-outline-danger" type="submit">
+                  Search
+                </button>
+                <!--final de la estructura de busqueda-->
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--comienzo del main con una grilla principal donde se incluyen las 4 secciones-->
+    <main class="grid_container">
+      <div id="title-first">
+        <h1 class="title-h1">EL CAMBIO QUE BUSCAS:</h1>
+        <h2 class="title-h2">Hatha Yoga: instructorado y profesorado.</h2>
+        <h2 class="title-h2">Iniciacion en Kriya Yoga.</h2>
+      </div>
+
+      <section class="profesorado">
+        <a href="pages/profesorado.html">
+          <img class="imagenes-cursos" src="img/imagen_gente_yoga0.webp" />
+          <div class="contiene-info-curso">
+            <div>Curso</div>
+            <h3>PROFESORADO</h3>
+            <p>Curso de Yoga de 500 hs</p>
+          </div>
+        </a>
+      </section>
+      <section class="instructorado">
+        <a href="pages/instructorado.html">
+          <img class="imagenes-cursos" src="img/imagen_gente_yoga.webp" />
+          <div class="contiene-info-curso">
+            <div>Curso</div>
+            <h3>INSTRUCTORADO</h3>
+            <p>Curso de Yoga de 200 hs</p>
+          </div>
+        </a>
+      </section>
+      <section class="iniciacion">
+        <a href="#">
+          <img class="imagenes-cursos" src="img/Kriya-iniciacion.jpeg" />
+        </a>
+        <div>
+          <div>Iniciacion</div>
+          <h3>KRIYA YOGA</h3>
+          <p>Duración de 2 días</p>
+        </div>
+      </section>
+      <div class="img-escuela">
+        <img src="img/vela1.jpg" />
+      </div>
+
+      <section id="info-escuela">
+        <h2>NUESTRA ESCUELA</h2>
+        <p>
+          La Escuela Samadhi Yoga es un centro de renombre que ha estado
+          impartiendo enseñanzas de Kriya Yoga y Hatha Yoga durante los últimos
+          30 años. Fundada por el Yogacharya Kriyananda, la escuela se ha
+          destacado por ofrecer una enseñanza de alta calidad que abarca tanto
+          el aspecto físico como el espiritual del yoga. En términos de calidad
+          de enseñanza, la Escuela Samadhi Yoga se distingue por su enfoque
+          integral y holístico.
+        </p>
+        <p>
+          Sus instructores están altamente capacitados y poseen una profunda
+          comprensión de las prácticas de yoga que enseñan. Además, la escuela
+          se esfuerza por crear un ambiente acogedor y de apoyo donde los
+          estudiantes puedan embarcarse en su propio viaje de autodescubrimiento
+          y crecimiento personal.
+        </p>
+        <p>
+          En cuanto a la infraestructura, la Escuela Samadhi Yoga cuenta con dos
+          centros ubicados estratégicamente en Argentina. Estos centros están
+          diseñados para proporcionar un entorno propicio para la práctica del
+          yoga, con amplias salas de yoga equipadas con los elementos necesarios
+          para llevar a cabo las diferentes prácticas. Además, la escuela suele
+          ofrecer una variedad de servicios complementarios, como áreas de
+          descanso, vestuarios y tiendas donde los estudiantes pueden adquirir
+          equipos y materiales relacionados con el yoga.
+        </p>
+        <p>
+          En resumen, la Escuela Samadhi Yoga se destaca por su compromiso con
+          la excelencia en la enseñanza del yoga, así como por la calidad de sus
+          instalaciones y servicios. Es un lugar donde los estudiantes pueden
+          sumergirse en la práctica del yoga con confianza, sabiendo que están
+          siendo guiados por profesionales expertos y que cuentan con todo lo
+          necesario para su desarrollo y bienestar.
+        </p>
+      </section>
+    </main>
+    <!--final del main-->
+
+    <footer class="footer">
+      <ul>
+        <li>
+          © 1999 - 2023 Escuela de Yoga SAMADHI. Todos los derechos reservados.
+        </li>
+        <li>General Roca, Río Negro, Argentina</li>
+        <li></li>
+      </ul>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

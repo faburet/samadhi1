@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SAMADHI YOGA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/estilo.css" />
+  </head>
+  <body class="fondo">
+    <header>
+      <!--Titulos y logo para Desktop-->
+      <div>
+        <img
+          src="../img/klipartz2.png"
+          id="logo-principal0"
+          alt="logo principal de escuela de yoga" />
+        <div class="name">
+          <span>SAMADHI YOGA</span>
+          <p>Union cuerpo-mente-alma</p>
+        </div>
+
+        <div id="search">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 search-input"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search" />
+            <button class="btn btn-outline-danger search-boton" type="submit">
+              Buscar
+            </button>
+          </form>
+        </div>
+      </div>
+      <!--fin de titulos para desktop-->
+
+      <!--comienzo de la navbar de BOOSTRAP en movil-->
+
+      <nav class="navbar navbar-expand-lg bg-menu ms-0 mt-0">
+        <div class="container-fluid">
+          <a id="imagen-menu" href="#"
+            ><img
+              class="logo-principal"
+              src="../img/logo_principal3.png"
+              alt="silueta de hombre meditando frente al sol"
+          /></a>
+
+          <div class="name">
+            <span>SAMADHI YOGA</span>
+          </div>
+          <!--boton de la barra posicionado arriba a la derecha en movil-->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <!--"todos los "aria" son para mejorar la accesibilidad, no cambia la funcionalidad!-->
+            <!--"aria-controls" asocia semanticamene el elemento al boton-->
+          </button>
+          <!--fin del boton de menú-->
+
+          <!--contenido de opciones del menú-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-0 mb-lg-2 navbar-propio">
+              <li class="nav-item navitem-propio">
+                <a
+                  class="nav-link navlink-propio"
+                  aria-current="page"
+                  href="../index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown navitem-propio">
+                <a
+                  class="nav-link dropdown-toggle navlink-propio"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Historia
+                </a>
+                <!-- menu dropdown-->
+                <ul class="dropdown-menu bg-menu">
+                  <li>
+                    <a class="dropdown-item" href="nosotros.html"
+                      >Sobre Nosotros</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../index.html#info-escuela"
+                      >Escuela</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Hatha Yoga</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Kriya Yoga</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- fin de menú dropdown-->
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="profesorado.html"
+                  >Curso Profesorado</a
+                >
+              </li>
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="instructorado.html"
+                  >Curso Instructorado</a
+                >
+              </li>
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="#"
+                  >Iniciacion Kriya Yoga</a
+                >
+              </li>
+              <li class="nav-item navitem-propio">
+                <a class="nav-link navlink-propio" href="#">Tienda</a>
+              </li>
+              <li class="nav-item navitem-propio">
+                <a
+                  id="current"
+                  class="nav-link navlink-propio"
+                  href="contacto.html"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+            <!--comienzo de la estructura de input y boton de busqueda-->
+            <div class="busqueda">
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search" />
+                <button class="btn btn-outline-danger" type="submit">
+                  Search
+                </button>
+                <!--final de la estructura de busqueda-->
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!--cuadro principal de contacto: mail/direccion/horario/telefono-->
+      <section id="banner-contacto">
+        <div id="contacto-textos">
+          <h1 id="title-h2">CONTACTO</h1>
+          <div id="grid-contacto">
+            <div id="email">
+              <img id="icono-contacto" src="../img/iconomail.png" alt="" />
+              <h5>&nbsp;&nbsp;E-mail</h5>
+              <p>Samadhiyoga@gmail.com</p>
+            </div>
+            <div id="direccion">
+              <img id="icono-contacto" src="../img/iconocasa.png" alt="" />
+              <h5>Direccion</h5>
+              <p>Santa Rosa 1225</p>
+              <p>General Roca, Río Negro</p>
+              <p>Argentina</p>
+            </div>
+            <div id="horario">
+              <img id="icono-contacto" src="../img/iconoreloj.png" alt="" />
+              <h5>Horarios</h5>
+              <p>Lunes a Sabado</p>
+              <p>de 06 hs a 20 hs</p>
+            </div>
+            <div id="telefono">
+              <img id="icono-contacto" src="../img/iconotel.png" alt="" />
+              <h5>Telefono</h5>
+              <p>+54 2995889940</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--sección de contacto en redes-->
+      <section id="fondo-redes">
+        <h2 id="title-h2">SEGUINOS EN NUESTRAS REDES</h2>
+        <div id="contacto-redes">
+          <a href="#" class="item">
+            <img src="../img/icono-face.png" alt="icono de Facebook" />
+          </a>
+          <a href="#" class="item">
+            <img src="../img/icono-insta.png" alt="icono de Instagram" />
+          </a>
+          <a href="#" class="item">
+            <img src="../img/icono-wspp.png" alt="icono de whatsapp" />
+          </a>
+          <a href="#" class="item">
+            <img src="../img/icono-youtube.png" alt="icono de youtube" />
+          </a>
+        </div>
+      </section>
+
+      <!--ACORDEON-DE BOOSTRAP PARA PREGUNTAS FRECUENTES-->
+      <section id="acordeon">
+        <h2>PREGUNTAS FRECUENTES</h2>
+        <div
+          class="accordion p-4 accordion-flush bg-item-acordeon"
+          id="accordionFlushExample">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-item-acordeon"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne">
+                ¿Cuanto cuestan los cursos?
+              </button>
+            </h3>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body acordeon-respuesta">
+                <p>El instructorado: 700 mil pesos argentinos</p>
+                <p>El profesorado: 900 mil pesos argentinos</p>
+                <p>La iniciacion en Kriya: 50 dolares americanos</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-item-acordeon"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo">
+                Los cursos son online?
+              </button>
+            </h3>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body acordeon-respuesta">
+                <p>
+                  El curso de instructorado puede ser semipresencial o
+                  presencial.
+                </p>
+                <p>
+                  El curso de profesorado es 80% presencial y el 20% puede ser
+                  online.
+                </p>
+                <p>La iniciacion en Kriya Yoga es presencial</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-item-acordeon"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree">
+                ¿Cuanto duran los cursos?
+              </button>
+            </h3>
+            <div
+              id="flush-collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body acordeon-respuesta">
+                <p>Tanto el profesorado como el intructorado duran 12 meses.</p>
+                <p>La iniciación en Kriya Yoga dura 3 días.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Formulario de contacto-->
+      <section class="form">
+        <h2>Formulario de Contacto</h2>
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="topic"
+              >Me gustaría contactarlos por el siguiente tema:</label
+            >
+            <select name="topic" id="topic" required>
+              <option value="" disabled selected hidden>
+                Selecciona una opción
+              </option>
+              <option value="Instructorado de Yoga">
+                Instructorado de Yoga
+              </option>
+              <option value="Profesorado de Yoga">Profesorado de Yoga</option>
+              <option value="Iniciación en Kriya">Iniciación en Kriya</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="firstName">Nombres:</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+          <div class="form-group-inline">
+            <div class="form-group">
+              <label for="phone">Teléfono/WhatsApp:</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo Electrónico:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Escriba su mensaje aquí..."
+              required></textarea>
+          </div>
+          <div class="form-group">
+            <h5>¿Cómo supiste de la escuela?</h5>
+            <div class="options">
+              <label
+                ><input type="radio" name="source" value="Google" />
+                Google</label
+              ><br />
+              <label
+                ><input type="radio" name="source" value="Facebook" />
+                Facebook</label
+              ><br />
+              <label
+                ><input type="radio" name="source" value="Instagram" />
+                Instagram</label
+              ><br />
+              <label
+                ><input type="radio" name="source" value="Otro" /> Otro</label
+              >
+            </div>
+          </div>
+          <button id="btn-form" type="submit">Aceptar</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <ul>
+        <li>
+          © 1999 - 2023 Escuela de Yoga SAMADHI. Todos los derechos reservados.
+        </li>
+        <li>General Roca, Río Negro, Argentina</li>
+        <li></li>
+      </ul>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
