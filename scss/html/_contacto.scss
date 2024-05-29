@@ -1,0 +1,206 @@
+
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+@import "../componentes/boton";
+@import "general";
+/*----------------------------------------pagina de contacto-------------------------------------------------*/
+  
+#banner-contacto {
+    /*establece imagen de fondo del primer titulo*/
+    background-image: linear-gradient( 
+    $text-bg-color1, $background-color3),
+    url("../img/contacto3.jpeg");
+    @extend %banner;
+   } 
+   
+#grid-contacto {
+   display: grid;
+   grid-template-columns: auto, auto;
+   grid-template-rows: auto auto;
+   grid-template-areas: "email direccion"
+                       "horario telefono";
+   margin-top: 10%;
+   }
+#email {
+ grid-area: email;
+}
+#direccion {
+ grid-area: direccion;
+}
+#horario {
+ grid-area: horario;
+}
+#telefono {
+ grid-area: telefono;
+}
+   
+#icono-contacto { @include sizes-margin (25%,25%,0 0 0 40%);}
+#contacto-textos {
+           h1 { @include general-textos ($text-color,$fontsize-large,null,center,$text-bg-color1);
+           margin-bottom: 10%;
+           padding: 5%;
+           }
+           h5 { @include sizes-margin (null,null,5% 0 0 33%);
+             font-size:$fontsize-mediumx;
+            }
+           p { @include general-textos ($text-color,1.3em,null,center,null);}  
+           background-color: $text-bg-color2;
+           color: $text-color;
+           @include sizes-margin (100%,100%,5% 0 0 0%);
+   }
+/*//////////////////flex para posicion de iconos de redes/////////////////////////*/
+#fondo-redes {
+     margin-top: 1%;
+     background-image: linear-gradient( 
+       $text-bg-color1, $background-color3),
+       url("../img/contacto3.jpeg");
+   
+             h2 { @include general-textos ($text-color,$fontsize-large,null,center,$text-bg-color1);
+               margin-bottom: -6%;
+               padding: 6%;
+             }         
+           }
+#contacto-redes {
+     display: flex;
+     justify-content: space-between;
+     background-color:$text-bg-color2;
+     padding: 4% 0;
+     @include sizes-margin (100%,100%,6% 0 10% 0%);
+    }
+.item {
+     img {@include sizes-margin (40%,auto,0 0 0 33%);}       
+   }
+   
+/*////////////////ACORDEON DE BOOSTRAP (preguntas frecuentes////////////////////////*/
+   
+#acordeon { @include general-textos ($text-color,null,null,center,$main-color);
+           @include sizes-margin (80%,null,0 0 10% 10%);
+           box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+         }
+   
+.bg-item-acordeon { @include general-textos ($text-color,null,null,null,$bg-form);}
+   
+.acordeon-respuesta {@include general-textos (null,$fontsize-medium,null,null,$bg-form1);}
+   
+.accordion {
+     --bs-accordion-active-bg: #d88674;
+     --bs-accordion-active-color: #523029;
+     --bs-accordion-btn-focus-box-shadow: none;
+   }
+   
+/*////FORMULARIO CONTACTO///////////////*/
+.form { @include sizes-margin (90%,null,12% auto 12% auto);
+     padding: 20px;
+     @include shadow-border (5%);
+     background-color:$bg-form;
+               h2 { @include general-textos ($text-color,null,null,center,$main-color);
+               width: 100%;
+               }
+}
+.form-group {
+     margin-bottom: 5%;
+   }
+   
+.form-group-inline {
+     display: flex;
+     justify-content: space-between;
+   }
+   
+.form-group label { @include general-textos ($text-color,$fontsize-medium,bold,null,null);
+     display: block;
+     margin-bottom: 1%;}
+   
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+     width: 100%;
+     padding: 1%;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+   }
+   
+textarea {
+   resize: vertical;
+}
+   
+.options {
+     display: flex;
+     flex-direction: column;
+     input[type="radio"] {
+       margin-right: 5%;
+     }
+   }
+    
+input:focus,
+select:focus,
+textarea:focus {
+       outline: 2px solid $background-img2;
+   }
+   
+input[type="radio"]:focus {
+     outline: none;
+}
+
+///////////////////////////////////////////MEDIA QUERY PANTALLA TABLET (contacto)///////////////////////////////////*/
+@media screen and (min-width: 768px){ 
+ #icono-contacto { @include sizes-margin (25%,35%,0 0 0 37%);}
+ #grid-contacto {row-gap: 5%; margin-bottom: 10%;}
+ #contacto-textos{/*fondo en los textos*/
+                 background-color: $text-bg-color2;
+                 color: $text-color;
+                 padding-bottom: 2%;
+                 @include sizes-margin (100%,100%,5% 0 0 0%);
+                 h1 { @include general-textos ($text-color,$fontsize-xxlarge,null,center,$text-bg-color1);
+                     margin-bottom: 10%;
+                     padding: 5%;
+                   }
+                 h5 { @include sizes-margin (null,null,5% 0 5% 35%);
+                     font-size:$fontsize-xlarge;
+                   }
+                 p { @include general-textos ($text-color,$fontsize-large,bolder,center,null); margin-left: 3%;}
+   }
+
+ #fondo-redes {
+            h2 { @include general-textos ($text-color,$fontsize-xxlarge,null,center,$text-bg-color1);}         
+           }
+           
+ .form { @include sizes-margin (60%,null,12% auto 12% auto);}
+ #topic option {font-size: 1%;}             
+} 
+///////////////////////////////////////////MEDIA QUERY PANTALLA DESKTOP (contacto)///////////////////////////////////*/
+@media screen and (min-width: 1280px) {
+#grid-contacto {
+      grid-template-columns: 25% repeat(3, 1fr);
+      grid-template-areas: "email direccion horario telefono";
+     }
+ #icono-contacto {margin-left: 38%;}
+ #contacto-textos {/*fondo en los textos*/
+              h1 {font-size: 4.5em;}
+              h5 {
+                 font-size:$fontsize-large;
+                 margin-left: 38%;
+                 }
+              p {font-size:$fontsize-medium;}
+ }
+ #fondo-redes {
+     margin-top: 1%;
+     background-image: linear-gradient( 
+     $text-bg-color1, $background-color3),
+     url("../img/contacto3.jpeg");
+             h2 {
+                 font-size: 4.5em;
+                 margin-bottom: 6%;
+                 padding: 6%;
+              }         
+  }
+ .item {
+        img { @include sizes-margin (20%,auto,0 0 0 40%);
+           }       
+       }
+ #acordeon { @include sizes-margin (50%,null,0 0 0 25%);}
+ .form {max-width: 40%;}
+}

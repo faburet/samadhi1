@@ -1,0 +1,24 @@
+@import "../utilidades/mixin"; 
+@import "../utilidades/variables"; 
+//BOTON FORMULARIO
+.btn-form {  @include general-textos ($text-color,$fontsize-medium,null,null,$main-color);
+    display: block;
+    width: 23%;
+    padding: 1%;
+    border-radius: 5px;
+    margin-left: 40%;
+    &:hover {
+        background-color:$hover-color-btn;
+      }
+}
+.btn-mas {//BOTON VER MAS
+    background-color: $text-color1;
+    color:$text-color;
+    width: 20%;
+    height: 5%;
+    padding-bottom: 1%;
+    padding: 0;
+    &:hover {
+        background-color:$hover-color-btn;
+      }
+  }

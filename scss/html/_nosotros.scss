@@ -1,0 +1,58 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../componentes/boton";
+@import "general";
+
+/*-------------------------------pagina de historia ("nosotros")--------------------------------------------*/
+.background {background-image: url("../img/playa-amanecer.jpeg"); background-size: cover;}
+
+.contiene{ display: grid;
+  padding-top: 5%;
+  grid-template-columns: 80%;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "mision"
+                      "vision"
+                      "historia";
+  row-gap: 0.5%;
+  justify-content: center;
+  margin-bottom: 10%; } 
+
+  .mision {grid-area: mision;}
+  .vision {grid-area: vision;}
+  .historia {grid-area: historia;}
+
+  .vision p, .mision p, .historia p{ @include general-textos ($text-color,1.2em,null,justify,$text-bg-color2);
+    line-height: 2em;
+    padding: 3%;
+}
+
+.btn-mas { font-size: 1em; } /*boton "VER MAS" de BOOSTRAP*/
+ 
+  /*///////////////////////MEDIA QUERIES PANTALLA TABLET ("nosotros")/////////////////////////////*/
+  @media screen and (min-width: 768px) {
+    .title-h1 {padding: 5% 0;}
+    .title-h2 {padding: 3% 0;}
+    .title-h1, .title-h2 {
+      @include general-textos (null,3em,null,center,$text-bg-color1);
+      width: 100%;}
+   }
+   .btn-mas { width: 10%; }
+
+  /*///////////////////////MEDIA QUERIES PANTALLA DESKTOP ("nosotros")/////////////////////////////*/
+  @media screen and (min-width: 1280px) {
+    
+    .title-h1, .title-h2 {
+      @include general-textos (null,4em,null,center,$text-bg-color1);}
+    .contiene{ display: grid;
+      grid-template-columns: 40% 40%;
+      grid-template-rows: auto auto;
+      grid-template-areas: "mision vision"
+                           "historia historia";
+     
+      row-gap: 5%;
+      column-gap: 10%;} 
+    
+    .vision p, .mision p, .historia p{ 
+      font-size: $fontsize-large;
+      height: auto;}
+  }

@@ -1,0 +1,176 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+@import "general";
+
+/*----------------------------------pagina instructorado--------------------------------------*/
+
+  .banner-instructorado{  /*establece imagen de fondo*/
+    background-image: linear-gradient($text-bg-color1, $background-color3),
+       url("../img/principio2.jpg");
+    @extend %banner;
+   }
+
+   .banner-textos {
+    background-color: $text-bg-color2;  /*fondo en los textos*/
+        h1 { @include general-textos (null,1.7em,bolder,null,null)};
+        p { @include general-textos ($text-color,$fontsize-medium,bold,center,null);
+            padding: 2%;}
+    }  
+.grid-container-instructor { /*grilla principal de la página*/
+display: grid;
+grid-template-columns: 80%;
+grid-template-rows: auto auto auto 1fr;
+justify-content: center;
+margin-top: 14%;
+
+  .info-general-instructorado { /*primera seccion*/
+    grid-row: 1/2; 
+  }
+
+  .imgs-instructorado {
+    margin-top: 10%;
+    display: flex;
+    grid-row: 2/3;
+  }
+
+.docentes {   /*segunda seccion docentes*/
+  grid-row: 3/4;
+
+}
+.pago {grid-row: 4/5;
+  @include sizes-margin (null,auto,20% 0 0 0);
+}
+} 
+.grid-images {
+display: grid;
+grid-template-rows: repeat(3, 1fr);
+grid-template-columns: repeat(2, auto);
+grid-gap: 10%;
+         a {display: block;}  /* asi el link ocupa todo el espacio disponibleee */   
+         img {@include sizes-margin (100%,100%,null);
+             border-radius: 2%;
+          }  
+}
+.info-general-instructorado {
+  p { @include general-textos (rgb(53, 36, 40),$fontsize-medium,bold,justify,null);
+    border-bottom: 1px solid rgba(212, 84, 84, 0.6); /* limite para línea de borde inferior */
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    }
+} /*informacion general del instructorado con lineas para separar la info*/
+
+.grid-docentes {
+display: grid;
+grid-template-rows: repeat(6, 1fr);
+grid-template-columns: repeat(2, 1fr);
+column-gap: 5%;
+row-gap: 10%;
+text-align: center;
+  img { @include sizes-margin (60%,60%,null);}
+}
+.docentes {
+      h3 { @include general-textos (rgb(53, 36, 40),$fontsize-large,bolder,center,null);
+          @include sizes-margin (null,null,34% 0% 15% 0%);
+          border-bottom: 1px solid $main-color;
+          padding: 5% 0;
+}
+}
+.custom-border:last-child p:last-child {
+padding-bottom: 10%;   
+}
+
+.pago {
+.row:nth-child(4) {margin-bottom: 10%; margin-top: 10%}
+}
+.col2-pago {p {margin-top: 3%;
+          @include general-textos (null,$fontsize-large,null,center,null);};
+}
+.col1-pago {       
+@include shadow-border(20%);
+background-color:$main-color;
+height: auto;
+color:$text-color;
+padding-top: 2%;
+padding-bottom: 2%;
+      h5 {@include general-textos ($text-color1,$fontsize-xlarge,null,center,null);
+          margin-top: 2%; }
+      
+        /*texto dentro de los cuadritos y texto suelto a la izquierda*/
+      p { @include general-textos (null,$fontsize-large,null,center,null);}
+  }
+
+
+/*////////////////////////MEDIA QUERIES PANTALLA TABLET (instructorado)/////////////////////////////*/
+@media screen and (min-width: 768px) {
+
+.banner-textos {
+      h1 { font-size:$fontsize-large};
+      p {font-size:$fontsize-xlarge;
+          padding: 2%};
+  }  
+  .info-general-instructorado p { font-size:$fontsize-large};
+  .docentes h3 { font-size: 3em};
+
+  .pago {margin-bottom: 50%};
+.col1-pago {width: 50%; margin-bottom: 10%;
+        p{margin-left: 5%}
+      };
+.col2-pago {width: 50%};
+}
+
+/*////////////////////////MEDIA QUERIES PANTALLA DESKTOP (instructorado)/////////////////////////////*/
+@media screen and (min-width: 1280px) {
+.banner-textos {margin-left: 10%;
+                h1 {font-size:$fontsize-xxlarge;}
+                p {font-size:$fontsize-xlarge;}
+              }
+
+.grid-container-instructor { /*grilla principal de la página*/
+display: grid;
+grid-template-columns: auto auto;
+grid-template-rows: repeat(2, auto) 1fr;
+column-gap: 5%;
+margin-left: 5%;
+.info-general-instructorado {/*primera seccion*/
+grid-row: 1/2;
+grid-column: 1/2;
+}
+
+.imgs-instructorado {
+@include sizes-margin (null,null,0% 5%);
+grid-row: 1/2;
+grid-column: 2/4;
+}
+
+.docentes {/*segunda seccion docentes*/
+      @include sizes-margin (20%,20%,0 0 0 14%);
+      grid-row: 2/3;
+      grid-column: 1/4;
+}
+.pago { @include sizes-margin (null,null, 0% 0 0 15%);
+    grid-row: 3/4;
+    grid-column: 1/4;}
+}
+.info-general-instructorado {
+  p {font-size:$fontsize-large;}
+}/*informacion general del instructorado con lineas para separar la info*/
+.grid-docentes {
+grid-template-rows: repeat(2, 1f);
+grid-template-columns: repeat(4, 50%);
+column-gap: 50%;
+row-gap: 30%;
+margin-left: 10%;
+}
+.docentes {
+          h3 {
+              width: 336%;
+              font-weight: bolder;
+              margin-top: 100%;
+             }
+        }
+.col1-pago {width: 40%};
+.col2-pago {width: 50%};
+.pago {.row {margin-bottom: 2rem;}}
+.col2-pago {p {margin-left: 5%};}
+} 

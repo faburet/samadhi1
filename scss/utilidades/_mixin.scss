@@ -42,14 +42,6 @@
       background-color: $backcolor;
     }
   }
-  /*agiliza la asignación de areas-grid*/
-  @mixin assign-grid-areas($areas...) {
-    @each $area in $areas {
-      .#{$area} {
-        grid-area: #{$area};
-      }
-    }
-  }
   
   @mixin shadow-border($radius: null) {
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -67,3 +59,8 @@
     }
   }
   
+  @mixin grid ($row-gap, $column-gap) {
+    row-gap: $row-gap;
+    column-gap: $column-gap;
+    display: grid;
+  }
