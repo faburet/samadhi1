@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../css/estilo.css" />
   </head>
-  <body>
+  <body class="background">
     <header>
       <!--Titulos y logo para Desktop-->
       <div>
@@ -42,11 +42,11 @@
 
       <!--comienzo de la navbar de BOOSTRAP en movil-->
 
-      <nav class="navbar navbar-expand-lg bg-menu ms-0 mt-0">
+      <nav class="navbar navbar-expand-lg navbar-expand-md bg-menu ms-0 mt-0">
         <div class="container-fluid">
           <a id="imagen-menu" href="#"
             ><img
-              class="logo-principal"
+              id="logo-principal"
               src="../img/logo_principal3.png"
               alt="silueta de hombre meditando frente al sol"
           /></a>
@@ -71,6 +71,7 @@
 
           <!--contenido de opciones del menú-->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <p id="subname-Mb">Union cuerpo-mente-alma</p>
             <ul class="navbar-nav me-auto mb-0 mb-lg-2 navbar-propio">
               <li class="nav-item navitem-propio">
                 <a
@@ -113,21 +114,16 @@
               <!-- fin de menú dropdown-->
               <li class="nav-item navitem-propio">
                 <a class="nav-link navlink-propio" href="profesorado.html"
-                  >Curso Profesorado</a
+                  >Profesorado</a
                 >
               </li>
               <li class="nav-item navitem-propio">
                 <a class="nav-link navlink-propio" href="instructorado.html"
-                  >Curso Instructorado</a
+                  >Instructorado</a
                 >
               </li>
               <li class="nav-item navitem-propio">
-                <a class="nav-link navlink-propio" href="#"
-                  >Iniciacion Kriya Yoga</a
-                >
-              </li>
-              <li class="nav-item navitem-propio">
-                <a class="nav-link navlink-propio" href="#">Tienda</a>
+                <a class="nav-link navlink-propio" href="#">Kriya Yoga</a>
               </li>
               <li class="nav-item navitem-propio">
                 <a class="nav-link navlink-propio" href="contacto.html"
@@ -154,9 +150,9 @@
       </nav>
     </header>
 
-    <main class="background">
+    <main>
       <div class="contiene">
-        <div class="mision">
+        <section class="mision">
           <div>
             <h1 class="title-h2">LA MISION DE</h1>
             <h2 class="title-h1">SAMADHI YOGA</h2>
@@ -174,8 +170,8 @@
             una vida consciente, equilibrada y significativa, en armonía con la
             naturaleza y en servicio a los demás.
           </p>
-        </div>
-        <div class="vision">
+        </section>
+        <section class="vision">
           <div>
             <h1 class="title-h2">LA VISION</h1>
           </div>
@@ -194,8 +190,8 @@
             personas a despertar su potencial más elevado y a vivir vidas plenas
             y significativas.
           </p>
-        </div>
-        <div class="historia">
+        </section>
+        <section class="historia">
           <div>
             <h2 class="title-h1">HISTORIA</h2>
           </div>
@@ -252,7 +248,7 @@
               y realización en su vida.
             </p>
           </div>
-        </div>
+        </section>
       </div>
     </main>
 

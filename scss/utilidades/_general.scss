@@ -1,0 +1,124 @@
+@import "variables";
+@import "mixin";
+
+// RESETEO DE MARGENES-PADDING-BORDES Y SETEO DE FUENTE PRINCIPAL
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: $family-font1;
+  }
+
+// ESTILO GENERAL DEL BODY
+body {
+    background-image: radial-gradient(circle, $background-color1, $background-color2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: $fontsize-base;
+}
+
+// ESTILO GENERAL DEL HEADER
+    header {
+        background-image: linear-gradient(45deg, $background-img1, $background-img2);
+
+        @media screen and (max-width: 767px) {
+            /* No mostrar nombre e imagen del menú desktop-tablet */
+            div:first-child {
+                display: none;
+            }
+        }
+    }
+
+    //MOVIL//
+    #imagen-menu { @include sizes-margin (25%,25%,null);}
+    #logo-principal {@include sizes-margin (100%,100%,null);}/*logo principal menu movil*/
+
+    /* estilos del titulo principal SAMADHI YOGA y subtitulo */
+    .name { @include general-textos ($text-color-title,$fontsize-mediumx,bolder,null,null);
+        align-content: center;
+        text-shadow: 1px 1px 1px rgba(39, 39, 39, 0.8);
+        white-space: nowrap ;
+    }
+
+    /*subtitulo que aparece cuando el menú colapsa*/
+    #subname-Mb  { @include general-textos ($text-color,$fontsize-medium,null,center,null);
+    margin-left: 9%;
+    }
+    //boton de busqueda
+    .search-boton { @include sizes-margin (35%,10%,null);
+    font-size: $fontsize-small;
+    line-height: 1%;
+    }
+
+    //TABLET//
+    @media screen and (min-width: 768px){ 
+        #logo-principal0 { @include sizes-margin (23%,22%,null);}/*logo principal*/
+          
+          header div:first-child{                 /*nombre en el menu tablet*/
+            display: flex;
+            margin-left: 2%;
+          }
+          #search { @include sizes-margin (null,null,3% 0 0 8%);
+            display: flex;  
+          }
+          .search-input {  @include general-textos (null, $fontsize-small,bolder,null,null);
+            @include sizes-margin (50%,10%,null);}
+          
+            nav { justify-content: center;
+              div{.name {display: none};}
+          };
+         
+          .navlink-propio {text-align: center;}
+          .name {             /*estilo de titulos en el menú*/
+          @include general-textos ($text-color-title,$fontsize-medium,bolder,center,null);
+            margin-left: 10%;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+             span {
+              font-size:$fontsize-large;};
+              p {
+                font-size:  $fontsize-small;
+              };
+          }
+          #subname-Mb {display: none;} /*solo debe verse en movil*/
+        }
+    //DESKTOP//      
+    @media screen and (min-width: 1280px) { 
+        #logo-principal0 { @include sizes-margin (16%,14%,0 0 0 2%);}/*logo principal*/
+        
+    .name {             /*estilo de titulos en el menú*/
+        @include general-textos ($text-color-title,$fontsize-large,bolder,center,null);
+        
+        margin-left: 18%;};
+        #search { @include sizes-margin (null,null,1% 0 0 17%);}
+        .search-input {width: 40%}
+    }
+///////////////// MENU HAMBURGUESA DE BOOSTRAP (header)//////////
+    
+    .bg-menu {
+        background-color: $main-color;
+    }
+    
+    #current {                  /* opcion activa en el menú*/
+        color:$opcion-activa;
+    }
+    
+    .navbar-propio .navlink-propio {@include general-textos ($text-color,$fontsize-medium,bolder,null,null);}
+    .navitem-propio a:hover {
+        /*estilo en la selección del menú*/
+        background-color: darkorange;
+        color: white;
+    }
+                            //Fin estilo general HEADER//
+
+// ESTILO GENERAL DEL FOOTER
+.footer {
+    @include general-textos($text-color, null, null, center, $main-color);
+    height: 14%;
+    padding: 1%;
+
+    ul {
+        list-style: none;
+    }
+}

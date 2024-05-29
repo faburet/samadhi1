@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="../css/estilo.css" />
   </head>
-  <body class="fondo">
+  <body>
     <header>
       <!--Titulos y logo para Desktop-->
       <div>
@@ -43,11 +43,11 @@
 
       <!--comienzo de la navbar de BOOSTRAP en movil-->
 
-      <nav class="navbar navbar-expand-lg bg-menu ms-0 mt-0">
+      <nav class="navbar navbar-expand-lg navbar-expand-md bg-menu ms-0 mt-0">
         <div class="container-fluid">
           <a id="imagen-menu" href="#"
             ><img
-              class="logo-principal"
+              id="logo-principal"
               src="../img/logo_principal3.png"
               alt="silueta de hombre meditando frente al sol"
           /></a>
@@ -72,6 +72,7 @@
 
           <!--contenido de opciones del menú-->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <p id="subname-Mb">Union cuerpo-mente-alma</p>
             <ul class="navbar-nav me-auto mb-0 mb-lg-2 navbar-propio">
               <li class="nav-item navitem-propio">
                 <a
@@ -113,21 +114,16 @@
               <!-- fin de menú dropdown-->
               <li class="nav-item navitem-propio">
                 <a class="nav-link navlink-propio" href="profesorado.html"
-                  >Curso Profesorado</a
+                  >Profesorado</a
                 >
               </li>
               <li class="nav-item navitem-propio">
                 <a class="nav-link navlink-propio" href="instructorado.html"
-                  >Curso Instructorado</a
+                  >Instructorado</a
                 >
               </li>
               <li class="nav-item navitem-propio">
-                <a class="nav-link navlink-propio" href="#"
-                  >Iniciacion Kriya Yoga</a
-                >
-              </li>
-              <li class="nav-item navitem-propio">
-                <a class="nav-link navlink-propio" href="#">Tienda</a>
+                <a class="nav-link navlink-propio" href="#">Kriya Yoga</a>
               </li>
               <li class="nav-item navitem-propio">
                 <a
@@ -223,7 +219,7 @@
                 data-bs-target="#flush-collapseOne"
                 aria-expanded="false"
                 aria-controls="flush-collapseOne">
-                ¿Cuanto cuestan los cursos?
+                ¿Cuánto cuestan los cursos?
               </button>
             </h3>
             <div
@@ -246,7 +242,7 @@
                 data-bs-target="#flush-collapseTwo"
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo">
-                Los cursos son online?
+                ¿Los cursos son online?
               </button>
             </h3>
             <div
@@ -275,7 +271,7 @@
                 data-bs-target="#flush-collapseThree"
                 aria-expanded="false"
                 aria-controls="flush-collapseThree">
-                ¿Cuanto duran los cursos?
+                ¿Cuánto duran los cursos?
               </button>
             </h3>
             <div
@@ -319,11 +315,11 @@
           </div>
           <div class="form-group-inline">
             <div class="form-group">
-              <label for="phone">Teléfono/WhatsApp:</label>
+              <label for="phone">Tel./Wsp:</label>
               <input type="tel" id="phone" name="phone" required />
             </div>
             <div class="form-group">
-              <label for="email">Correo Electrónico:</label>
+              <label for="email">E-mail:</label>
               <input type="email" id="email" name="email" required />
             </div>
           </div>
