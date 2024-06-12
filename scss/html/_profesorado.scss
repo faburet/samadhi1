@@ -1,21 +1,18 @@
-@import "../utilidades/variables";
-@import "../utilidades/mixin";
-@import "../utilidades/extend";
-@import "../componentes/boton";
-@import "../componentes/cuadro-texto";
-@import "general";
 /*-----------------------------------------pagina profesorado ---------------------------------------------*/
 
 .banner-profesorado {
-    /*establece imagen de fondo*/
-    background-image: linear-gradient( 
+      /*establece imagen de fondo*/
+      background-image: linear-gradient( 
       $text-bg-color1, $background-color3),
       url("../img/profesorado.jpeg");
       @extend %banner;
+}
+.animate__fadeInUp {
+    --animate-duration: 1s; /* Ajusta la duración de la animación */
+    --animate-delay: 0.5s; /* Ajusta el retraso de la animación */
   }
   
-  
-  .loto {
+.loto {
     /*seccion imagen de loto e informacion sobre profesorado*/
     background-image: radial-gradient(circle, $background-color1, $background-color2);
     @include sizes-margin (80%,null,10% 0 0 10%);
@@ -29,44 +26,49 @@
     p {  @include general-textos ($text-color1,$fontsize-small,null,justify,null);
       @include sizes-margin (93%,null,5% 0 0 4%);
       line-height: 150%;
-     }
-  }
+    }
+}
   
-  .profesor {
-    display: grid;
-    grid-template-columns: auto;
-   }
+.profesor {
+  display: grid;
+  grid-template-columns: auto;
+}
   
-  .cuadro-texto {     /*cuadros de informacion sobre el curso con fotos*/
+.cuadro-texto {     /*cuadros de informacion sobre el curso con fotos*/
      @include sizes-margin (90%,null,10% 0 0 5%);
-             img { @include sizes-margin (95%,auto,0 0 0 2%);}
-  }
+     img { @include sizes-margin (95%,auto,0 0 0 2%);}
+}
   
-  .texto { @include general-textos ($text-color1,$fontsize-medium,bolder,justify,null);
-    
-  }
+.texto { @include general-textos ($text-color1,$fontsize-medium,bolder,justify,null)}
+
   
-  #formulario {
-              .container {  /*formulario*/
-              border: 2px solid #800000;
-              @include shadow-border (5%);
-              padding: 20px;
-              background-color:$bg-form;
-              }
-  }
-  
-  .form-width {
-    width: 70%;
-    margin-bottom: 10%;
-  }
-  .rotulo { @include general-textos (null,1.2em,null,center,null);
+#formulario {
+            .container {  /*formulario*/
+            border: 2px solid #800000;
+            @include shadow-border (5%);
+            padding: 20px;
+            background-color:$bg-form;
+            }
+            h5 {@include general-textos ($text-color1,$fontsize-large,bolder,center,null)}
+            .form-group {label{margin-left:6%}}
+            .form-width {
+              width: 80%;
+              margin-bottom: 10%;
+            }
+}
+ 
+.rotulo { @include general-textos (null,1.2em,null,center,null);
     margin-right: 10%;
-  }
-  .col-md-6 h4 { @include general-textos ($text-color1,null,null,center,null);
-  /*fin formulario*/
-  } 
+}
+.col-md-6 {h4 { @include general-textos ($text-color1,null,null,center,null)}
+} 
+
+ ///////////////////////////////////////////MEDIA QUERY PANTALLA TABLET (profesorado)///////////////////////////////////*/
+ @media screen and (min-width: 768px) {
+ #formulario {.form-width {width:68%}}
+ }
   
-  ///////////////////////////////////////////MEDIA QUERY PANTALLA DESKTOP (profesorado)///////////////////////////////////*/
+///////////////////////////////////////////MEDIA QUERY PANTALLA DESKTOP (profesorado)///////////////////////////////////*/
   @media screen and (min-width: 1280px) {
     .loto {  /*seccion imagen de loto e informacion sobre profesorado*/
         display: flex;
@@ -84,8 +86,17 @@
     margin-left: 10%;
           img {@include sizes-margin (50%,90%,4% 0 0 5%);
           }
+          &:nth-child(2){
+            width: 95%;
+            margin-left: 3%; // Ajusta el ancho del segundo cuadro-texto
+          }
     }
-    .form-width {
-      width: 50%;
-    }
-  }
+ 
+    #info-doc {display: flex; flex-direction: column; align-items: center;
+      justify-content: center;
+      text-align: center;}
+
+    #formulario {
+                .form-width {width: 50%}
+                }
+}

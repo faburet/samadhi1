@@ -1,5 +1,13 @@
+@import "utilidades/variables";
+@import "utilidades/extend";
+@import "utilidades/mixin";
+@import "componentes/boton";
+@import "componentes/cuadro-texto";
+@import "componentes/formulario";
+@import "html/general";
 @import "html/index";
 @import "html/nosotros";
 @import "html/instructorado";
 @import "html/profesorado";
+@import "html/kriya";
 @import "html/contacto";

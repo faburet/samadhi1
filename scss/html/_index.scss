@@ -1,11 +1,8 @@
-@import "../utilidades/variables";
-@import "../utilidades/mixin";
-@import "general";
 /*-----------------------------------------INDEX-------------------------------------------------*/
 #title-first {  /*primer titulo del main con imagen de fondo*/
     @include sizes-margin (100%,100%,6% 0);
     grid-area: title-first;
-    background-image: url(../img/meditacion.jpg);
+    background-image: url(../img/banner-inicio.jpg);
     background-size: cover;
     }
   .title-h1 {@include general-textos ($text-color,$fontsize-large,bolder,center,$text-bg-color1); 
@@ -44,6 +41,7 @@
       @include sizes-margin($fontsize-super, null, 0 0 5% 35%);
       @include shadow-border(0 0 5px 5px);
       padding: 1% 0;
+      &:hover{background-color: $hover-color-btn}
     }
     h3 {
       @include general-textos(null, $fontsize-large, 900, null, null);
@@ -61,10 +59,11 @@
       &:active {
         color: #ff6600;
       }
+
     }
     &.profesorado {
       grid-area: profesorado;
-      text-align: center;
+      text-align: center; 
     }
   
     &.instructorado {
@@ -79,6 +78,10 @@
     }
   }
   
+  .profesorado,.instructorado,.iniciacion{ 
+              &:hover {animation: pulse 1s;}
+}
+
   .imagenes-cursos { @include sizes-margin (90%,auto,18% 0 0 0);
     padding: 6px; /* Espacio interno alrededor de la imagen */
     background-color: $text-color;
@@ -237,8 +240,9 @@
   @media screen and (min-width: 1280px) { 
     .title-h1, .title-h2 {@include general-textos (null,$fontsize-super,null,center,$text-bg-color1)}
   /*///////////////////////////////estilado info de cursos Desktop//////////////////////////////////////////*/
-  
-  .profesorado div div,      /*etiquetita de curso*/
+
+  /*etiquetita de curso*/
+  .profesorado div div,      
   .instructorado div div {
       margin-left: 42%;
     }

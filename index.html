@@ -12,6 +12,9 @@
       crossorigin="anonymous" />
 
     <link rel="stylesheet" href="css/estilo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
     <header>
@@ -40,9 +43,7 @@
         </div>
       </div>
       <!--fin de titulos para desktop-->
-
       <!--comienzo de la navbar de BOOSTRAP en movil-->
-
       <nav class="navbar navbar-expand-lg navbar-expand-md bg-menu ms-0 mt-0">
         <div class="container-fluid">
           <a id="imagen-menu" href="#"
@@ -65,8 +66,6 @@
             aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            <!--"todos los "aria" son para mejorar la accesibilidad, no cambia la funcionalidad!-->
-            <!--"aria-controls" asocia semanticamene el elemento al boton-->
           </button>
           <!--fin del boton de menú-->
 
@@ -124,7 +123,9 @@
                 >
               </li>
               <li class="nav-item navitem-propio">
-                <a class="nav-link navlink-propio" href="#">Kriya Yoga</a>
+                <a class="nav-link navlink-propio" href="pages/kriya.html"
+                  >Kriya Yoga</a
+                >
               </li>
               <li class="nav-item navitem-propio">
                 <a class="nav-link navlink-propio" href="pages/contacto.html"
@@ -152,6 +153,7 @@
     </header>
 
     <!--comienzo del main con una grilla principal donde se incluyen las 4 secciones-->
+
     <main class="grid_container">
       <div id="title-first">
         <h1 class="title-h1">EL CAMBIO QUE BUSCAS:</h1>
@@ -169,6 +171,7 @@
           </div>
         </a>
       </section>
+
       <section class="instructorado">
         <a href="pages/instructorado.html">
           <img class="imagenes-cursos" src="img/imagen_gente_yoga.webp" />
@@ -182,12 +185,13 @@
       <section class="iniciacion">
         <a href="#">
           <img class="imagenes-cursos" src="img/Kriya-iniciacion.jpeg" />
+
+          <div>
+            <div>Iniciacion</div>
+            <h3>KRIYA YOGA</h3>
+            <p>Duración de 2 días</p>
+          </div>
         </a>
-        <div>
-          <div>Iniciacion</div>
-          <h3>KRIYA YOGA</h3>
-          <p>Duración de 2 días</p>
-        </div>
       </section>
       <div class="img-escuela">
         <img src="img/vela1.jpg" />
@@ -236,16 +240,96 @@
     </main>
     <!--final del main-->
 
-    <footer class="footer">
-      <ul>
-        <li>
-          © 1999 - 2023 Escuela de Yoga SAMADHI. Todos los derechos reservados.
-        </li>
-        <li>General Roca, Río Negro, Argentina</li>
-        <li></li>
-      </ul>
+    <footer>
+      <div class="footer">
+        <div id="logo-footer">
+          <img
+            id="logo-footer-img"
+            src="img/klipartz2.png"
+            alt="logo principal de escuela de yoga" />
+          <div id="name-footer">
+            <span>SAMADHI</span>
+            <p>Escuela de Yoga</p>
+          </div>
+        </div>
+        <div id="menu-footer">
+          <div>
+            <a class="nav-link navlink-propio" href="index.html">Inicio</a>
+            <a class="nav-link navlink-propio" href="pages/nosotros.html"
+              >Historia
+            </a>
+            <a class="nav-link navlink-propio" href="pages/profesorado.html"
+              >Profesorado</a
+            >
+          </div>
+          <span
+            >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span
+          >
+          <div>
+            <a class="nav-link navlink-propio" href="pages/instructorado.html"
+              >Instructorado</a
+            >
+            <a
+              style="white-space: nowrap"
+              class="nav-link navlink-propio"
+              href="pages/kriya.html"
+              >Kriya Yoga</a
+            >
+            <a class="nav-link navlink-propio" href="pages/contacto.html"
+              >Contacto</a
+            >
+          </div>
+        </div>
+        <div id="sitios-footer">
+          <p>Paginas oficiales de Kriya Yoga</p>
+          <ul>
+            <li>
+              <a class="nav-link navlink-propio" href="https://www.kriya.org/"
+                >Kriya Yoga Internacional</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link navlink-propio"
+                href="https://www.prajnanamission.org/paramahamsa-prajnanananda/"
+                >Prajnana Mission</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link navlink-propio"
+                href="https://www.youtube.com/channel/UCLo1GNyqeh7IZ0D0ep79lkA"
+                >Programas Kriya Yoga</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link navlink-propio"
+                href="https://kriya.org.br/ashram/"
+                >Ashram Kriya Yoga Brasil</a
+              >
+            </li>
+            <li>
+              <a
+                class="nav-link navlink-propio"
+                href="https://open.spotify.com/show/1dapCljdbcQvAzJWd7TasX?si=q2OFY5W8Tqa7GXOKAnaT_Q"
+                >Kriya Yoga Bogota (Podcasts)</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="pie">
+          <p id="pie-mv">
+            © 1999 - 2023 Escuela de Yoga SAMADHI. General Roca, Río Negro, Rep.
+            Argentina.
+          </p>
+          <p id="pie-dk-tbl">
+            © 1999 - 2023 Escuela de Yoga SAMADHI. Todos los derechos
+            reservados. General Roca, Río Negro, Argentina.
+          </p>
+        </div>
+      </div>
     </footer>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

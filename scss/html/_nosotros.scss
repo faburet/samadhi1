@@ -1,8 +1,3 @@
-@import "../utilidades/variables";
-@import "../utilidades/mixin";
-@import "../componentes/boton";
-@import "general";
-
 /*-------------------------------pagina de historia ("nosotros")--------------------------------------------*/
 .background {background-image: url("../img/playa-amanecer.jpeg"); background-size: cover;}
 
@@ -26,7 +21,7 @@
     padding: 3%;
 }
 
-.btn-mas { font-size: 1em; } /*boton "VER MAS" de BOOSTRAP*/
+.btn-mas { font-size: 0.8em; } /*boton "VER MAS" de BOOSTRAP*/
  
   /*///////////////////////MEDIA QUERIES PANTALLA TABLET ("nosotros")/////////////////////////////*/
   @media screen and (min-width: 768px) {
@@ -36,7 +31,7 @@
       @include general-textos (null,3em,null,center,$text-bg-color1);
       width: 100%;}
    }
-   .btn-mas { width: 10%; }
+  
 
   /*///////////////////////MEDIA QUERIES PANTALLA DESKTOP ("nosotros")/////////////////////////////*/
   @media screen and (min-width: 1280px) {

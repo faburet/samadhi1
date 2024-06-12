@@ -1,8 +1,3 @@
-@import "../utilidades/variables";
-@import "../utilidades/mixin";
-@import "../utilidades/extend";
-@import "general";
-
 /*----------------------------------pagina instructorado--------------------------------------*/
 
   .banner-instructorado{  /*establece imagen de fondo*/
@@ -24,7 +19,7 @@ grid-template-rows: auto auto auto 1fr;
 justify-content: center;
 margin-top: 14%;
 
-  .info-general-instructorado { /*primera seccion*/
+  .info-general-curso { /*primera seccion*/
     grid-row: 1/2; 
   }
 
@@ -34,7 +29,7 @@ margin-top: 14%;
     grid-row: 2/3;
   }
 
-.docentes {   /*segunda seccion docentes*/
+.maestros {   /*segunda seccion docentes*/
   grid-row: 3/4;
 
 }
@@ -52,47 +47,57 @@ grid-gap: 10%;
              border-radius: 2%;
           }  
 }
-.info-general-instructorado {
+.info-general-curso {
   p { @include general-textos (rgb(53, 36, 40),$fontsize-medium,bold,justify,null);
-    border-bottom: 1px solid rgba(212, 84, 84, 0.6); /* limite para línea de borde inferior */
+    border-bottom: 1px solid $background-img2; /* limite para línea de borde inferior */
     padding-bottom: 5%;
     margin-bottom: 5%;
     }
 } /*informacion general del instructorado con lineas para separar la info*/
 
-.grid-docentes {
-display: grid;
-grid-template-rows: repeat(6, 1fr);
-grid-template-columns: repeat(2, 1fr);
-column-gap: 5%;
-row-gap: 10%;
-text-align: center;
-  img { @include sizes-margin (60%,60%,null);}
+
+.grid-container-instructor {
+                            .maestros {
+                            .grid-maestros {
+                                display: grid;
+                                grid-template-rows: repeat(4, 1fr);
+                                grid-template-columns: repeat(2, 1fr);
+                                column-gap: 10%;
+                                text-align: center;
+                                margin-bottom: 50%;
+                                    img { @include sizes-margin (70%,20%,null); border-radius: 50%; /*margin-top: -25%*/;}
+                                
+                                    h3 { @include general-textos (rgb(53, 36, 40),$fontsize-mediumx,bolder,center,null);
+                                    @include sizes-margin (null,null,15% 0% 15% 0%);
+                                    border-bottom: 1px solid $main-color;
+                                    }
+                                    h4 {@include general-textos (wheat,$fontsize-medium,bold,center,null);
+                                    border-radius: 5%; 
+                                    background-image: linear-gradient($background-color2, rgb(255, 102, 0));
+                                    margin-top: 5%}
+                                    p {@include general-textos (null,1.2em,bold,center,null)}
+                              }
+                            }
+                         
 }
-.docentes {
-      h3 { @include general-textos (rgb(53, 36, 40),$fontsize-large,bolder,center,null);
-          @include sizes-margin (null,null,34% 0% 15% 0%);
-          border-bottom: 1px solid $main-color;
-          padding: 5% 0;
-}
-}
+
 .custom-border:last-child p:last-child {
 padding-bottom: 10%;   
 }
 
 .pago {
-.row:nth-child(4) {margin-bottom: 10%; margin-top: 10%}
+      .row:nth-child(4) {margin-bottom: 10%; margin-top: 10%}
 }
 .col2-pago {p {margin-top: 3%;
           @include general-textos (null,$fontsize-large,null,center,null);};
 }
 .col1-pago {       
-@include shadow-border(20%);
-background-color:$main-color;
-height: auto;
-color:$text-color;
-padding-top: 2%;
-padding-bottom: 2%;
+  @include shadow-border(20%);
+  background-color:$main-color;
+  height: auto;
+  color:$text-color;
+  padding-top: 2%;
+  padding-bottom: 2%;
       h5 {@include general-textos ($text-color1,$fontsize-xlarge,null,center,null);
           margin-top: 2%; }
       
@@ -105,18 +110,31 @@ padding-bottom: 2%;
 @media screen and (min-width: 768px) {
 
 .banner-textos {
-      h1 { font-size:$fontsize-large};
-      p {font-size:$fontsize-xlarge;
-          padding: 2%};
+               h1 { font-size:$fontsize-large};
+               p {font-size:$fontsize-large;
+                  padding: 2%};
   }  
-  .info-general-instructorado p { font-size:$fontsize-large};
-  .docentes h3 { font-size: 3em};
+.info-general-curso{ p { font-size:$fontsize-large}};
 
-  .pago {margin-bottom: 50%};
+
+.grid-container-instructor {
+                            .maestros {
+                              h3 { @include general-textos (rgb(53, 36, 40),$fontsize-xlarge,bolder,center,null)}
+                              
+                              .grid-maestros {row-gap: 3%;
+                                h4 {@include general-textos (wheat,$fontsize-large,bolder,center,null)};
+                                p {@include general-textos (null,$fontsize-mediumx,bold,center,null)}
+                                img {@include sizes-margin (70%,27%,null);margin-top: -5%;}
+                                margin-bottom: 40%
+                              }  
+                            }
+}
+
+.pago {margin-bottom: 50%}
 .col1-pago {width: 50%; margin-bottom: 10%;
-        p{margin-left: 5%}
-      };
-.col2-pago {width: 50%};
+           p{margin-left: 5%}
+}
+.col2-pago {width: 45%;margin-left: 5%};
 }
 
 /*////////////////////////MEDIA QUERIES PANTALLA DESKTOP (instructorado)/////////////////////////////*/
@@ -127,50 +145,56 @@ padding-bottom: 2%;
               }
 
 .grid-container-instructor { /*grilla principal de la página*/
-display: grid;
-grid-template-columns: auto auto;
-grid-template-rows: repeat(2, auto) 1fr;
-column-gap: 5%;
-margin-left: 5%;
-.info-general-instructorado {/*primera seccion*/
-grid-row: 1/2;
-grid-column: 1/2;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(2, auto) 1fr;
+  column-gap: 5%;
+  margin-left: 5%;
+.info-general-curso {/*primera seccion*/
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
 
 .imgs-instructorado {
-@include sizes-margin (null,null,0% 5%);
-grid-row: 1/2;
-grid-column: 2/4;
+  @include sizes-margin (null,null,0% 5%);
+  grid-row: 1/2;
+  grid-column: 2/4;
 }
 
-.docentes {/*segunda seccion docentes*/
-      @include sizes-margin (20%,20%,0 0 0 14%);
+.maestros {/*segunda seccion docentes*/
+      @include sizes-margin (10%,10%,0 0 0 0%);
       grid-row: 2/3;
       grid-column: 1/4;
+      
 }
-.pago { @include sizes-margin (null,null, 0% 0 0 15%);
+.pago { @include sizes-margin (null,null, 0% 0 0 10%);
     grid-row: 3/4;
-    grid-column: 1/4;}
+    grid-column: 1/4;
+  row-gap: 0%;}
 }
-.info-general-instructorado {
+.info-general-curso {
   p {font-size:$fontsize-large;}
 }/*informacion general del instructorado con lineas para separar la info*/
-.grid-docentes {
-grid-template-rows: repeat(2, 1f);
-grid-template-columns: repeat(4, 50%);
-column-gap: 50%;
-row-gap: 30%;
-margin-left: 10%;
-}
-.docentes {
-          h3 {
-              width: 336%;
-              font-weight: bolder;
-              margin-top: 100%;
+.grid-container-instructor{ .maestros{
+                              .grid-maestros {
+                              grid-template-rows: 50% 50%; /*repeat(2, auto);*/
+                              grid-template-columns: repeat(4, 70%);
+                              column-gap:200%;
+                              margin-bottom: 250%;
+                              margin-left: 1%;
+                              img{ @include sizes-margin (160%,28%,null); border-radius: 50%; margin-left: 50%;margin-bottom: 15%}
+                              h4 {@include general-textos (wheat,$fontsize-large,bolder,center,null);
+                                  width:160%; margin-left:50%;};
+                              p {@include general-textos (null,$fontsize-medium,bold,center,null); width:250%};
+                              }
+                            }
+          }
+.grid-container-instructor .maestros {
+          h3 {@include sizes-margin (250%,null,150% 0 50% 350%);                      
              }
         }
 .col1-pago {width: 40%};
 .col2-pago {width: 50%};
-.pago {.row {margin-bottom: 2rem;}}
+.pago {.row {margin-bottom: 2rem}}
 .col2-pago {p {margin-left: 5%};}
 } 
