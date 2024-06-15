@@ -126,12 +126,13 @@ body {
 // ESTILO GENERAL DEL FOOTER
 
 //MOVIL//
-.footer {display: grid;
+.footer {
+        display: grid;
         grid-template-columns: repeat(2, auto);
         grid-template-rows: repeat(3, auto);
         background-color: $main-color;
         ul {list-style: none}
-        #logo-footer-img { @include sizes-margin (90%,40%,10% 0 0 20%);}
+        #logo-footer-img { @include sizes-margin (90%,40%,10% 0 0 20%)}
         #logo-footer{
                     grid-column: 1/2;
                     grid-row: 1/2;           
@@ -139,22 +140,22 @@ body {
                     #name-footer{             
                                 @include general-textos ($text-color-title,$fontsize-medium,bolder,center,null);
                                 span {letter-spacing: 0.3em};
-                                margin-left: 0.5em;
                                 p {margin-left: 15%}
                                 margin-top: 5%;
+                                margin-left: 0.5em;
                                 }
                     }
         #menu-footer{
                     grid-column: 2/3;
                     grid-row: 1/2;   
                     padding:10%;
-                    margin-top: 8%;
-                    margin-left: 62%;
+                    margin: 8% 0 0 62%;
                     span {display: none}
                     a {@include general-textos ($text-color,$fontsize-medium,null,center,null)}                  
                     a:hover {color: $hover-menu}
                     }
-        #sitios-footer {margin-top: 2%;
+        #sitios-footer {
+                       margin-top: 2%;
                        p {@include general-textos ($text-color-title,$fontsize-medium,bold,center,null)}       
                        a {@include general-textos ($text-color-title,$fontsize-medium,null,center,null);margin-left: -10%;} 
                        a:hover {color: rgb(255, 72, 0)}      
@@ -177,39 +178,38 @@ body {
 //TABLET//
  @media screen and (min-width: 768px){ 
     .footer {
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: 70% 30%;
-        #logo-footer-img { @include sizes-margin (60%,47%,10% 0 0 20%);}
-        #logo-footer {
-                     margin-left: 10%;
-                     #name-footer{             
-                                 
-                                  span {letter-spacing: 0.8em};
-                                  margin-left: 0.6em;
-                                  p {margin-left: -7%}
-                                  }
-                    }
-        #menu-footer {
-                     margin-top: 5%;
-                     margin-left: 25%;
-                     a {@include general-textos ($text-color,$fontsize-medium,null,center,null)}                  
-                     a:hover {background-color: $hover-menu; color: white}
-                    }
-        #sitios-footer {margin-left: 5%;
-                        margin-top: 7%;
-                        p {@include general-textos ($text-color-title,$fontsize-medium,bold,center,null)}       
-                        a {@include general-textos ($text-color-title,$fontsize-medium,null,center,null);margin-left: -10%;} 
-                        a:hover {color: rgb(255, 72, 0)}      
-                        grid-column: 3/4;
-                        grid-row: 1/2;
-        }
-        #pie {
-             grid-row: 2/3;   
-             }
-    }
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: 70% 30%;
+            #logo-footer-img { @include sizes-margin (60%,47%,10% 0 0 20%);}
+            #logo-footer {
+                         margin-left: 10%;
+                         #name-footer{             
+                                     span {letter-spacing: 0.8em};
+                                     margin-left: 0.6em;
+                                     p {margin-left: -7%}
+                                     }
+            }
+            #menu-footer { 
+                         margin:5% 0 0 25%;
+                         a {@include general-textos ($text-color,$fontsize-medium,null,center,null)}                  
+                         a:hover {background-color: $hover-menu; color: white}
+            }
+            #sitios-footer {
+                           margin: 7% 0 0 5%;
+                           p {@include general-textos ($text-color-title,$fontsize-medium,bold,center,null)}       
+                           a {@include general-textos ($text-color-title,$fontsize-medium,null,center,null);
+                           margin-left: -10%
+                           } 
+                           grid-column: 3/4;
+                           grid-row: 1/2;
+            }
+            #pie {
+               grid-row: 2/3;   
+            }
+    } 
     #pie-dk-tbl {display: block}
     #pie-mv {display: none}
- }
+}
 //DESKTOP//
 @media screen and (min-width: 1280px) { 
     .footer {
@@ -224,17 +224,19 @@ body {
                                     margin-left: 0.6em;
                                     margin-top: 15%;
                                     }
-                        }
+            }
             #menu-footer{
                         display: flex;
                         margin-left: 0;
                         span{display: block}
                         a {@include general-textos ($text-color,$fontsize-medium,null,left,null)}                  
-                        }
+            }
             #sitios-footer {margin-top: 0%;
-                            p {@include general-textos ($text-color-title,$fontsize-mediumx,null,left,null)}       
-                            a {@include general-textos ($text-color-title,$fontsize-medium,null,left,null);margin-left:0} 
-                           }
+                           p {@include general-textos ($text-color-title,$fontsize-mediumx,null,left,null)}       
+                           a {@include general-textos ($text-color-title,$fontsize-medium,null,left,null);
+                             margin-left:0
+                           } 
+            }
     }
 }
 

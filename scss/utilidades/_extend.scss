@@ -3,3 +3,9 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 5%};
+%cuadrito-curso{
+               @include sizes-margin (90%,null,0 0 0 5%);
+               background-color: $text-color;
+               padding-bottom: 5%;
+               box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75)
+} 

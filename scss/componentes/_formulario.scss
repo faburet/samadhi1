@@ -1,0 +1,21 @@
+#formulario {
+            .container {  /*formulario*/
+                       border: 2px solid #800000;
+                       @include shadow-border (5%);
+                       padding: 20px;
+                       background-color:$bg-form;
+                       width: 90%;
+                       h5 {@include general-textos ($text-color1,$fontsize-mediumx,bolder,center,null);width:150%;margin-bottom: 5%}
+                       h6 {@include general-textos ($text-color1,$fontsize-large,bolder,center,null)};white-space: nowrap;
+                       @media screen and (min-width: 768px) {width: 135%; h5{font-size: $fontsize-medium}; margin-left:-17%}
+                       @media screen and (min-width: 1280px) {width: 150%; margin-left:-30%;}
+                       
+                          /*.form-group {label{margin-left:6%}}*/
+                          .rotulo { @include general-textos (null,1.5em,null,center,null);
+                          margin-right: 10%;
+                       }
+                       .col-md-6 {h4 { @include general-textos ($text-color1,null,null,center,null)}
+                       }                       
+                       margin-bottom: 10%;
+            }         
+}

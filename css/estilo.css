@@ -7,6 +7,15 @@
   margin-top: 5%;
 }
 
+.iniciacion div, .grid_container .profesorado .contiene-info-curso, .grid_container .instructorado .contiene-info-curso {
+  width: 90%;
+  /* Si se da un margen*/
+  margin: 0 0 0 5%;
+  background-color: beige;
+  padding-bottom: 5%;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 .btn-form {
   color: beige;
   font-size: 1.5em;
@@ -35,9 +44,66 @@
 
 .cuadro-texto {
   /*cuadros de informacion sobre el curso con fotos*/
-  background-color: rgba(143, 13, 13, 0.6);
+  background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgb(214, 99, 41));
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  padding: 25px;
+  padding: 5%;
+}
+
+.cuadro-texto2 {
+  background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgba(255, 81, 0, 0.5));
+  padding: 5%;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#formulario .container { /*formulario*/
+  border: 2px solid #800000;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  /* Si se da un border-radius*/
+  border-radius: 5%;
+  padding: 20px;
+  background-color: #e68671;
+  width: 90%;
+  white-space: nowrap;
+  /*.form-group {label{margin-left:6%}}*/
+  margin-bottom: 10%;
+}
+#formulario .container h5 {
+  color: rgb(87, 11, 24);
+  font-size: 1.8em;
+  font-weight: bolder;
+  text-align: center;
+  width: 150%;
+  margin-bottom: 5%;
+}
+#formulario .container h6 {
+  color: rgb(87, 11, 24);
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  #formulario .container {
+    width: 135%;
+    margin-left: -17%;
+  }
+  #formulario .container h5 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #formulario .container {
+    width: 150%;
+    margin-left: -30%;
+  }
+}
+#formulario .container .rotulo {
+  font-size: 1.5em;
+  text-align: center;
+  margin-right: 10%;
+}
+#formulario .container .col-md-6 h4 {
+  color: rgb(87, 11, 24);
+  text-align: center;
 }
 
 * {
@@ -232,8 +298,8 @@ header {
   font-size: 1.5em;
   font-weight: bolder;
   text-align: center;
-  margin-left: 0.5em;
   margin-top: 5%;
+  margin-left: 0.5em;
 }
 .footer #logo-footer #name-footer span {
   letter-spacing: 0.3em;
@@ -245,8 +311,7 @@ header {
   grid-column: 2/3;
   grid-row: 1/2;
   padding: 10%;
-  margin-top: 8%;
-  margin-left: 62%;
+  margin: 8% 0 0 62%;
 }
 .footer #menu-footer span {
   display: none;
@@ -320,8 +385,7 @@ header {
     margin-left: -7%;
   }
   .footer #menu-footer {
-    margin-top: 5%;
-    margin-left: 25%;
+    margin: 5% 0 0 25%;
   }
   .footer #menu-footer a {
     color: beige;
@@ -333,8 +397,7 @@ header {
     color: white;
   }
   .footer #sitios-footer {
-    margin-left: 5%;
-    margin-top: 7%;
+    margin: 7% 0 0 5%;
     grid-column: 3/4;
     grid-row: 1/2;
   }
@@ -349,9 +412,6 @@ header {
     font-size: 1.5em;
     text-align: center;
     margin-left: -10%;
-  }
-  .footer #sitios-footer a:hover {
-    color: rgb(255, 72, 0);
   }
   .footer #pie {
     grid-row: 2/3;
@@ -413,7 +473,15 @@ header {
   }
 }
 /*-----------------------------------------INDEX-------------------------------------------------*/
-#title-first { /*primer titulo del main con imagen de fondo*/
+/*grid principal con todas las secciones*/
+.grid_container {
+  /*esta es la grilla para movil*/
+  display: grid;
+  grid-template-rows: 10% repeat(3, 1fr) auto;
+  grid-template-areas: "title-first" "profesorado" "instructorado" "iniciacion" "info-escuela";
+  /*///////estilado info de cursos//////*/
+}
+.grid_container #title-first { /*primer titulo del main con imagen de fondo*/
   width: 100%;
   height: 100%;
   /* Si se da un margen*/
@@ -422,8 +490,7 @@ header {
   background-image: url(../img/banner-inicio.jpg);
   background-size: cover;
 }
-
-.title-h1 {
+.grid_container #title-first .title-h1 {
   color: beige;
   font-size: 2em;
   font-weight: bolder;
@@ -431,34 +498,15 @@ header {
   background-color: rgba(143, 13, 13, 0.6);
   padding: 6% 0;
 }
-
-.title-h2 {
+.grid_container #title-first .title-h2 {
   color: beige;
   font-size: 2em;
   text-align: center;
   background-color: rgba(143, 13, 13, 0.6);
   padding: 5% 0;
 }
-
-/*grid principal con todas las secciones*/
-.grid_container {
-  /*esta es la grilla para movil*/
-  display: grid;
-  grid-template-rows: 10% repeat(3, 1fr) auto;
-  grid-template-areas: "title-first" "profesorado" "instructorado" "iniciacion" "info-escuela";
-}
-
-/*///////////////////////////////estilado info de cursos/////////////////////////////////////////////*/
-.contiene-info-curso,
-.iniciacion div {
-  width: 90%;
-  /* Si se da un margen*/
-  margin: 0 0 0 5%;
-  background-color: beige;
-  padding-bottom: 5%;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
+/*.grid_container {*/
+/*}  */
 .profesorado,
 .instructorado,
 .iniciacion { /*etiquetita de cursos*/ }
@@ -567,15 +615,14 @@ header {
 /*//////////////////////////////MEDIA QUERIES PANTALLA MOVIL (index)////////////////////////////////*/
 @media screen and (max-width: 767px) {
   #info-escuela {
-    background-image: url(../img/fuego.png);
+    background-image: url(../img/loto2.png);
     background-size: cover;
     font-size: 1.5em;
   }
   #info-escuela p {
-    color: beige;
+    color: black;
     font-weight: bolder;
     text-align: justify;
-    background-color: rgba(0, 0, 0, 0.6);
     width: 88%;
     /* Si se da un margen*/
     margin: 1% 0 0 6%;
@@ -602,6 +649,23 @@ header {
     row-gap: 0px;
     grid-template-areas: "title-first title-first" "profesorado instructorado" "iniciacion iniciacion" "info-escuela img-escuela";
   }
+  .grid_container #title-first {
+    height: auto;
+  }
+  .grid_container #title-first .title-h1 {
+    padding: 9% 0;
+    font-size: 4em;
+    text-align: center;
+    background-color: rgba(143, 13, 13, 0.6);
+    width: 100%;
+  }
+  .grid_container #title-first .title-h2 {
+    padding: 5% 0;
+    font-size: 4em;
+    text-align: center;
+    background-color: rgba(143, 13, 13, 0.6);
+    width: 100%;
+  }
   #imagen-menu,
   #name-Mb,
   .busqueda {
@@ -609,9 +673,6 @@ header {
   }
   main.grid_container {
     display: grid;
-  }
-  #title-first {
-    height: auto;
   }
   .imagenes-cursos {
     width: 90%;
@@ -624,20 +685,6 @@ header {
     width: 75%;
     /* Si se da un margen*/
     margin: 5% 0 0 0;
-  }
-  .title-h1 {
-    padding: 9% 0;
-    font-size: 4em;
-    text-align: center;
-    background-color: rgba(143, 13, 13, 0.6);
-    width: 100%;
-  }
-  .title-h2 {
-    padding: 5% 0;
-    font-size: 4em;
-    text-align: center;
-    background-color: rgba(143, 13, 13, 0.6);
-    width: 100%;
   }
   #img-escuela2 {
     display: block;
@@ -707,7 +754,7 @@ header {
 }
 /*////////////////////////MEDIA QUERIES PANTALLA DESKTOP (index)/////////////////////////////*/
 @media screen and (min-width: 1280px) {
-  .title-h1, .title-h2 {
+  #title-first .title-h1, #title-first .title-h2 {
     font-size: 5em;
     text-align: center;
     background-color: rgba(143, 13, 13, 0.6);
@@ -764,20 +811,28 @@ header {
   justify-content: center;
   margin-bottom: 10%;
 }
-
-.mision {
+.contiene .mision {
   grid-area: mision;
 }
-
-.vision {
+.contiene .vision {
   grid-area: vision;
 }
-
-.historia {
+.contiene .historia {
   grid-area: historia;
 }
-
-.vision p, .mision p, .historia p {
+.contiene .vision, .contiene .mision, .contiene .historia { /*boton "VER MAS" de BOOSTRAP*/ }
+.contiene .vision .title-h1, .contiene .vision .title-h2, .contiene .mision .title-h1, .contiene .mision .title-h2, .contiene .historia .title-h1, .contiene .historia .title-h2 {
+  color: beige;
+  font-size: 2em;
+  text-align: center;
+  background-color: rgba(143, 13, 13, 0.6);
+  width: 100%;
+  padding: 5%;
+}
+.contiene .vision .title-h1, .contiene .mision .title-h1, .contiene .historia .title-h1 {
+  font-weight: bolder;
+}
+.contiene .vision p, .contiene .mision p, .contiene .historia p {
   color: beige;
   font-size: 1.2em;
   text-align: justify;
@@ -785,32 +840,31 @@ header {
   line-height: 2em;
   padding: 3%;
 }
+.contiene .vision .btn-mas, .contiene .mision .btn-mas, .contiene .historia .btn-mas {
+  font-size: 0.6em;
+}
 
-.btn-mas {
-  font-size: 0.8em;
-} /*boton "VER MAS" de BOOSTRAP*/
 /*///////////////////////MEDIA QUERIES PANTALLA TABLET ("nosotros")/////////////////////////////*/
 @media screen and (min-width: 768px) {
-  .title-h1 {
-    padding: 5% 0;
-  }
-  .title-h2 {
-    padding: 3% 0;
-  }
-  .title-h1, .title-h2 {
+  .contiene { /*boton "VER MAS" de BOOSTRAP*/ }
+  .contiene .vision .title-h1, .contiene .vision .title-h2, .contiene .mision .title-h1, .contiene .mision .title-h2, .contiene .historia .title-h1, .contiene .historia .title-h2 {
+    color: beige;
     font-size: 3em;
     text-align: center;
     background-color: rgba(143, 13, 13, 0.6);
     width: 100%;
+    padding: 3%;
+  }
+  .contiene .vision p, .contiene .mision p, .contiene .historia p {
+    font-size: 2em;
+    height: auto;
+  }
+  .contiene .historia .btn-mas {
+    font-size: 0.8em;
   }
 }
 /*///////////////////////MEDIA QUERIES PANTALLA DESKTOP ("nosotros")/////////////////////////////*/
 @media screen and (min-width: 1280px) {
-  .title-h1, .title-h2 {
-    font-size: 4em;
-    text-align: center;
-    background-color: rgba(143, 13, 13, 0.6);
-  }
   .contiene {
     display: grid;
     grid-template-columns: 40% 40%;
@@ -819,24 +873,30 @@ header {
     row-gap: 5%;
     column-gap: 10%;
   }
-  .vision p, .mision p, .historia p {
-    font-size: 2em;
-    height: auto;
+  .contiene .vision .title-h1, .contiene .vision .title-h2, .contiene .mision .title-h1, .contiene .mision .title-h2, .contiene .historia .title-h1, .contiene .historia .title-h2 {
+    color: beige;
+    font-size: 4em;
+    text-align: center;
+    background-color: rgba(143, 13, 13, 0.6);
+    padding: 4%;
   }
 }
 /*----------------------------------pagina instructorado--------------------------------------*/
 .banner-instructorado { /*establece imagen de fondo*/
   background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgba(255, 81, 0, 0.5)), url("../img/principio2.jpg");
 }
-
-.banner-textos {
+.banner-instructorado .banner-textos {
   background-color: rgba(0, 0, 0, 0.6); /*fondo en los textos*/
 }
-.banner-textos h1 {
+.banner-instructorado .banner-textos h1 {
+  color: beige;
   font-size: 1.7em;
   font-weight: bolder;
+  text-align: center;
+  background-color: rgba(143, 13, 13, 0.6);
+  padding: 3% 0;
 }
-.banner-textos p {
+.banner-instructorado .banner-textos p {
   color: beige;
   font-size: 1.5em;
   font-weight: bold;
@@ -844,50 +904,30 @@ header {
   padding: 2%;
 }
 
+.certificacion {
+  color: rgb(58, 10, 34);
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(214, 99, 41);
+  margin-top: 15%;
+  padding: 5%; /*text-decoration: underline*/
+  height: 20%;
+}
+
 .grid-container-instructor { /*grilla principal de la página*/
   display: grid;
   grid-template-columns: 80%;
-  grid-template-rows: auto auto auto 1fr;
+  grid-template-rows: auto auto 40% 36%;
   justify-content: center;
-  margin-top: 14%;
+  margin-top: 10%;
 }
 .grid-container-instructor .info-general-curso { /*primera seccion*/
   grid-row: 1/2;
+  /*informacion general del instructorado con lineas para separar la info*/
 }
-.grid-container-instructor .imgs-instructorado {
-  margin-top: 10%;
-  display: flex;
-  grid-row: 2/3;
-}
-.grid-container-instructor .maestros { /*segunda seccion docentes*/
-  grid-row: 3/4;
-}
-.grid-container-instructor .pago {
-  grid-row: 4/5;
-  height: auto;
-  /* Si se da un margen*/
-  margin: 20% 0 0 0;
-}
-
-.grid-images {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 10%;
-  /* asi el link ocupa todo el espacio disponibleee */
-}
-.grid-images a {
-  display: block;
-}
-.grid-images img {
-  width: 100%;
-  height: 100%;
-  /* Si se da un margen*/
-  border-radius: 2%;
-}
-
-.info-general-curso p {
-  color: rgb(53, 36, 40);
+.grid-container-instructor .info-general-curso p {
+  color: rgb(58, 10, 34);
   font-size: 1.5em;
   font-weight: bold;
   text-align: justify;
@@ -895,23 +935,35 @@ header {
   padding-bottom: 5%;
   margin-bottom: 5%;
 }
-
-/*informacion general del instructorado con lineas para separar la info*/
-.grid-container-instructor .maestros .grid-maestros {
+.grid-container-instructor .imgs-instructorado {
+  /*margin-top: -80%;*/
+  display: flex;
+  grid-row: 2/3;
+}
+.grid-container-instructor .imgs-instructorado .grid-images {
+  margin-top: 10%;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10%;
-  text-align: center;
-  margin-bottom: 50%;
+  grid-template-rows: repeat(3, 35%);
+  grid-template-columns: repeat(2, auto);
+  column-gap: 5%;
+  /* grid-gap: 5%;*/
+  row-gap: 5%;
+  /* asi el link ocupa todo el espacio disponibleee */
 }
-.grid-container-instructor .maestros .grid-maestros img {
-  width: 70%;
-  height: 20%;
+.grid-container-instructor .imgs-instructorado .grid-images a {
+  display: block;
+}
+.grid-container-instructor .imgs-instructorado .grid-images img {
+  width: 100%;
+  height: 90%;
   /* Si se da un margen*/
-  border-radius: 50%; /*margin-top: -25%*/
+  border-radius: 2%;
 }
-.grid-container-instructor .maestros .grid-maestros h3 {
+.grid-container-instructor .maestros { /*segunda seccion docentes*/
+  margin-top: 30%;
+  grid-row: 3/4;
+}
+.grid-container-instructor .maestros h3 {
   color: rgb(53, 36, 40);
   font-size: 1.8em;
   font-weight: bolder;
@@ -919,6 +971,50 @@ header {
   /* Si se da un margen*/
   margin: 15% 0% 15% 0%;
   border-bottom: 1px solid rgb(163, 58, 54);
+}
+.grid-container-instructor .maestros .grid-maestros {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "docente1 docente2" "docente3 docente4" "docente5 docente6" "docente7 docente8";
+  column-gap: 10%;
+  row-gap: 1%;
+  text-align: center;
+  margin-bottom: 50%;
+}
+.grid-container-instructor .maestros .grid-maestros .docente1 {
+  grid-area: docente1;
+}
+.grid-container-instructor .maestros .grid-maestros .docente2 {
+  grid-area: docente2;
+}
+.grid-container-instructor .maestros .grid-maestros .docente3 {
+  grid-area: docente3;
+}
+.grid-container-instructor .maestros .grid-maestros .docente4 {
+  grid-area: docente4;
+}
+.grid-container-instructor .maestros .grid-maestros .docente5 {
+  grid-area: docente5;
+}
+.grid-container-instructor .maestros .grid-maestros .docente6 {
+  grid-area: docente6;
+}
+.grid-container-instructor .maestros .grid-maestros .docente7 {
+  grid-area: docente7;
+}
+.grid-container-instructor .maestros .grid-maestros .docente8 {
+  grid-area: docente8;
+}
+.grid-container-instructor .maestros .grid-maestros img {
+  width: 70%;
+  height: 20%;
+  /* Si se da un margen*/
+  border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+}
+.grid-container-instructor .maestros .grid-maestros img:hover {
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.8);
 }
 .grid-container-instructor .maestros .grid-maestros h4 {
   color: wheat;
@@ -930,27 +1026,25 @@ header {
   margin-top: 5%;
 }
 .grid-container-instructor .maestros .grid-maestros p {
+  color: rgb(58, 10, 34);
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
 }
-
-.custom-border:last-child p:last-child {
-  padding-bottom: 10%;
+.grid-container-instructor .pago {
+  grid-row: 4/5;
+  height: auto;
+  /* Si se da un margen*/
+  margin: 20% 0 0 0;
 }
-
-.pago .row:nth-child(4) {
-  margin-bottom: 10%;
-  margin-top: 10%;
-}
-
-.col2-pago p {
+.grid-container-instructor .pago .col2-pago p {
   margin-top: 3%;
-  font-size: 2em;
+  color: rgb(58, 10, 34);
+  font-size: 1.8em;
+  font-weight: bold;
   text-align: center;
 }
-
-.col1-pago {
+.grid-container-instructor .pago .col1-pago {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
   /* Si se da un border-radius*/
   border-radius: 20%;
@@ -961,28 +1055,40 @@ header {
   padding-bottom: 2%;
   /*texto dentro de los cuadritos y texto suelto a la izquierda*/
 }
-.col1-pago h5 {
+.grid-container-instructor .pago .col1-pago h5 {
   color: rgb(87, 11, 24);
   font-size: 2.5em;
   text-align: center;
   margin-top: 2%;
 }
-.col1-pago p {
+.grid-container-instructor .pago .col1-pago p {
   font-size: 2em;
   text-align: center;
 }
 
 /*////////////////////////MEDIA QUERIES PANTALLA TABLET (instructorado)/////////////////////////////*/
 @media screen and (min-width: 768px) {
-  .banner-textos h1 {
+  .banner-instructorado .banner-textos h1 {
     font-size: 2em;
   }
-  .banner-textos p {
+  .banner-instructorado .banner-textos p {
     font-size: 2em;
     padding: 2%;
   }
-  .info-general-curso p {
+  .certificacion {
+    font-size: 3.5em;
+  }
+  .grid-container-instructor {
+    grid-template-rows: auto auto 48% 21%;
+  }
+  .grid-container-instructor .info-general-curso p {
     font-size: 2em;
+  }
+  .grid-container-instructor .imgs-instructorado {
+    margin-top: -30%;
+  }
+  .grid-container-instructor .maestros {
+    margin-top: 20%;
   }
   .grid-container-instructor .maestros h3 {
     color: rgb(53, 36, 40);
@@ -1007,52 +1113,68 @@ header {
   }
   .grid-container-instructor .maestros .grid-maestros img {
     width: 70%;
-    height: 27%;
+    height: 31%;
     /* Si se da un margen*/
     margin-top: -5%;
   }
-  .pago {
+  .grid-container-instructor .pago { /*{ background-image: 
+url("../../img/loto2.png");
+background-size: cover;*/
     margin-bottom: 50%;
   }
-  .col1-pago {
+  .grid-container-instructor .pago .col1-pago {
     width: 50%;
     margin-bottom: 10%;
   }
-  .col1-pago p {
+  .grid-container-instructor .pago .col1-pago p {
     margin-left: 5%;
   }
-  .col2-pago {
+  .grid-container-instructor .pago .col2-pago {
     width: 45%;
     margin-left: 5%;
+  }
+  .grid-container-instructor .pago .col2-pago p {
+    font-weight: bold;
   }
 }
 /*////////////////////////MEDIA QUERIES PANTALLA DESKTOP (instructorado)/////////////////////////////*/
 @media screen and (min-width: 1280px) {
-  .banner-textos {
-    margin-left: 10%;
+  .banner-instructorado .banner-textos {
+    margin-left: 3%;
   }
-  .banner-textos h1 {
+  .banner-instructorado .banner-textos h1 {
     font-size: 3.5em;
   }
-  .banner-textos p {
+  .banner-instructorado .banner-textos p {
     font-size: 2.5em;
+  }
+  .certificacion {
+    font-size: 3.5em;
   }
   .grid-container-instructor { /*grilla principal de la página*/
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: repeat(2, auto) 1fr;
+    grid-template-rows: 28% 38% auto;
     column-gap: 5%;
     margin-left: 5%;
+    /*informacion general del instructorado con lineas para separar la info*/
+  }
+  .grid-container-instructor .info-general-curso p {
+    font-size: 2em;
   }
   .grid-container-instructor .info-general-curso { /*primera seccion*/
     grid-row: 1/2;
     grid-column: 1/2;
   }
   .grid-container-instructor .imgs-instructorado {
-    /* Si se da un margen*/
-    margin: 0% 5%;
     grid-row: 1/2;
     grid-column: 2/4;
+  }
+  .grid-container-instructor .imgs-instructorado .grid-images {
+    width: 90%;
+    height: 65%;
+    /* Si se da un margen*/
+    margin: 35% 0 0 5%;
   }
   .grid-container-instructor .maestros { /*segunda seccion docentes*/
     width: 10%;
@@ -1061,28 +1183,49 @@ header {
     margin: 0 0 0 0%;
     grid-row: 2/3;
     grid-column: 1/4;
+    margin-bottom: 25%;
   }
-  .grid-container-instructor .pago {
+  .grid-container-instructor .maestros h3 {
+    width: 250%;
     /* Si se da un margen*/
-    margin: 0% 0 0 10%;
-    grid-row: 3/4;
-    grid-column: 1/4;
-    row-gap: 0%;
+    margin: 150% 0 50% 350%;
   }
-  .info-general-curso p {
-    font-size: 2em;
-  }
-  /*informacion general del instructorado con lineas para separar la info*/
   .grid-container-instructor .maestros .grid-maestros {
-    grid-template-rows: 50% 50%; /*repeat(2, auto);*/
-    grid-template-columns: repeat(4, 70%);
-    column-gap: 200%;
-    margin-bottom: 250%;
-    margin-left: 1%;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, 80%);
+    column-gap: 180%;
+    /* margin-bottom: 250%;*/
+    grid-template-areas: "docente1 docente2 docente3 docente4" "docente5 docente6 docente7 docente8";
+    margin-left: 5%;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente1 {
+    grid-area: docente1;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente2 {
+    grid-area: docente2;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente3 {
+    grid-area: docente3;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente4 {
+    grid-area: docente4;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente5 {
+    grid-area: docente5;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente6 {
+    grid-area: docente6;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente7 {
+    grid-area: docente7;
+  }
+  .grid-container-instructor .maestros .grid-maestros .docente8 {
+    grid-area: docente8;
   }
   .grid-container-instructor .maestros .grid-maestros img {
     width: 160%;
-    height: 28%;
+    height: 30%;
     /* Si se da un margen*/
     border-radius: 50%;
     margin-left: 50%;
@@ -1095,6 +1238,8 @@ header {
     text-align: center;
     width: 160%;
     margin-left: 50%;
+    border-radius: 5%;
+    margin-top: 5%;
   }
   .grid-container-instructor .maestros .grid-maestros p {
     font-size: 1.5em;
@@ -1102,21 +1247,25 @@ header {
     text-align: center;
     width: 250%;
   }
-  .grid-container-instructor .maestros h3 {
-    width: 250%;
+  .grid-container-instructor .pago {
+    background-image: url("../img/loto2.png");
+    background-size: cover;
     /* Si se da un margen*/
-    margin: 150% 0 50% 350%;
+    margin: 0% 0 0 10%;
+    grid-row: 3/4;
+    grid-column: 1/4;
+    row-gap: 0%;
   }
-  .col1-pago {
-    width: 40%;
-  }
-  .col2-pago {
-    width: 50%;
-  }
-  .pago .row {
+  .grid-container-instructor .pago .row {
     margin-bottom: 2rem;
   }
-  .col2-pago p {
+  .grid-container-instructor .pago .col1-pago {
+    width: 40%;
+  }
+  .grid-container-instructor .pago .col2-pago {
+    width: 50%;
+  }
+  .grid-container-instructor .pago .col2-pago p {
     margin-left: 5%;
   }
 }
@@ -1124,6 +1273,24 @@ header {
 .banner-profesorado {
   /*establece imagen de fondo*/
   background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgba(255, 81, 0, 0.5)), url("../img/profesorado.jpeg");
+}
+.banner-profesorado .banner-textos {
+  background-color: rgba(0, 0, 0, 0.6); /*fondo en los textos*/
+}
+.banner-profesorado .banner-textos h1 {
+  color: beige;
+  font-size: 1.7em;
+  font-weight: bolder;
+  text-align: center;
+  background-color: rgba(143, 13, 13, 0.6);
+  padding: 3% 0;
+}
+.banner-profesorado .banner-textos p {
+  color: beige;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 2%;
 }
 
 .animate__fadeInUp {
@@ -1164,65 +1331,74 @@ header {
   display: grid;
   grid-template-columns: auto;
 }
-
-.cuadro-texto { /*cuadros de informacion sobre el curso con fotos*/
+.profesor .cuadro-texto { /*cuadros de informacion sobre el curso con fotos*/
   width: 90%;
   /* Si se da un margen*/
   margin: 10% 0 0 5%;
 }
-.cuadro-texto img {
+.profesor .cuadro-texto img {
   width: 95%;
   height: auto;
   /* Si se da un margen*/
   margin: 0 0 0 2%;
 }
-
-.texto {
+.profesor .cuadro-texto .texto {
   color: rgb(87, 11, 24);
   font-size: 1.5em;
   font-weight: bolder;
   text-align: justify;
 }
 
-#formulario .container { /*formulario*/
-  border: 2px solid #800000;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  /* Si se da un border-radius*/
-  border-radius: 5%;
-  padding: 20px;
-  background-color: #e68671;
-}
-#formulario h5 {
-  color: rgb(87, 11, 24);
-  font-size: 2em;
-  font-weight: bolder;
-  text-align: center;
-}
-#formulario .form-group label {
-  margin-left: 6%;
-}
-#formulario .form-width {
-  width: 80%;
-  margin-bottom: 10%;
-}
-
-.rotulo {
-  font-size: 1.2em;
-  text-align: center;
-  margin-right: 10%;
-}
-
-.col-md-6 h4 {
-  color: rgb(87, 11, 24);
-  text-align: center;
+#formulario .form-group {
+  width: 90%;
+  margin-left: 7%;
 }
 
 @media screen and (min-width: 768px) {
-  #formulario .form-width {
-    width: 68%;
+  .banner-profesorado .banner-textos h1 {
+    font-size: 2em;
+  }
+  .banner-profesorado .banner-textos p {
+    font-size: 2em;
+    padding: 2%;
+  }
+  .loto p {
+    color: rgb(87, 11, 24);
+    font-size: 1.5em;
+    text-align: justify;
+  }
+  .profesor .cuadro-texto { /*cuadros de informacion sobre el curso con fotos*/
+    width: 90%;
+    /* Si se da un margen*/
+    margin: 10% 0 0 5%;
+  }
+  .profesor .cuadro-texto img {
+    width: 95%;
+    height: auto;
+    /* Si se da un margen*/
+    margin: 0 0 0 2%;
+  }
+  .profesor .cuadro-texto .texto {
+    color: rgb(87, 11, 24);
+    font-size: 1.8em;
+    font-weight: bolder;
+    text-align: justify;
+  }
+  #formulario .form-group .form-control {
+    width: 200%;
+    margin-left: -50%;
   }
 }
 @media screen and (min-width: 1280px) {
+  .banner-profesorado .banner-textos {
+    margin-left: 3%;
+  }
+  .banner-profesorado .banner-textos h1 {
+    font-size: 3.5em;
+  }
+  .banner-profesorado .banner-textos p {
+    font-size: 2.5em;
+  }
   .loto { /*seccion imagen de loto e informacion sobre profesorado*/
     display: flex;
   }
@@ -1230,24 +1406,30 @@ header {
     margin-left: 0%;
   }
   .loto p {
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 200%;
     margin-left: 6%;
   }
-  .cuadro-texto {
+  .profesor .cuadro-texto {
     display: flex;
     width: 80%;
     margin-left: 10%;
   }
-  .cuadro-texto img {
+  .profesor .cuadro-texto img {
     width: 50%;
     height: 90%;
     /* Si se da un margen*/
     margin: 4% 0 0 5%;
   }
-  .cuadro-texto:nth-child(2) {
+  .profesor .cuadro-texto:nth-child(2) {
     width: 95%;
     margin-left: 3%;
+  }
+  .profesor .cuadro-texto .texto {
+    color: rgb(87, 11, 24);
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: justify;
   }
   #info-doc {
     display: flex;
@@ -1256,23 +1438,23 @@ header {
     justify-content: center;
     text-align: center;
   }
-  #formulario .form-width {
-    width: 50%;
-  }
 }
 /*----------------------------------------------pagina Kriya-----------------------------------------------*/
 .banner-iniciacion { /*establece imagen de fondo*/
   background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgba(255, 81, 0, 0.5)), url("../img/kriya.jpeg");
 }
-
-.banner-textos {
+.banner-iniciacion .banner-textos {
   background-color: rgba(0, 0, 0, 0.6); /*fondo en los textos*/
 }
-.banner-textos h1 {
+.banner-iniciacion .banner-textos h1 {
+  color: beige;
   font-size: 1.7em;
   font-weight: bolder;
+  text-align: center;
+  background-color: rgba(143, 13, 13, 0.6);
+  padding: 3% 0;
 }
-.banner-textos p {
+.banner-iniciacion .banner-textos p {
   color: beige;
   font-size: 1.5em;
   font-weight: bold;
@@ -1336,8 +1518,6 @@ header {
 .grid-container-kriya .yogas {
   margin-top: 5%;
   grid-row: 2/3;
-  background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgba(255, 81, 0, 0.5));
-  padding: 5% 5% 0 5%;
 }
 .grid-container-kriya .yogas img {
   width: 8%;
@@ -1363,11 +1543,10 @@ header {
   font-size: 1.5em;
   text-align: justify;
 }
-
-.maestros {
+.grid-container-kriya .maestros {
   grid-row: 3/4;
 }
-.maestros h3 {
+.grid-container-kriya .maestros h3 {
   color: rgb(87, 11, 24);
   font-size: 2em;
   font-weight: bolder;
@@ -1377,14 +1556,14 @@ header {
   border-bottom: 1px solid rgb(163, 58, 54);
   padding: 5% 0;
 }
-.maestros p {
+.grid-container-kriya .maestros p {
   color: rgb(87, 11, 24);
   font-size: 1.5em;
   font-weight: bold;
   text-align: justify;
   margin-bottom: 15%;
 }
-.maestros .grid-maestros {
+.grid-container-kriya .maestros .grid-maestros {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(2, 1fr);
@@ -1392,10 +1571,10 @@ header {
   row-gap: 2%;
   text-align: center;
 }
-.maestros .grid-maestros .custom-border:last-child p:last-child {
+.grid-container-kriya .maestros .grid-maestros .custom-border:last-child p:last-child {
   padding-bottom: 10%;
 }
-.maestros .grid-maestros img {
+.grid-container-kriya .maestros .grid-maestros img {
   width: 80%;
   height: 50%;
   /* Si se da un margen*/
@@ -1403,13 +1582,13 @@ header {
   box-shadow: 0 0 20px rgb(245, 234, 173);
   transition: box-shadow 0.3s ease; /* Añade una transición suave */
 }
-.maestros .grid-maestros img:hover {
+.grid-container-kriya .maestros .grid-maestros img:hover {
   box-shadow: 0 0 100px rgba(255, 255, 255, 0.8);
 }
-.maestros .grid-maestros a {
+.grid-container-kriya .maestros .grid-maestros a {
   text-decoration: none;
 }
-.maestros .grid-maestros h4 {
+.grid-container-kriya .maestros .grid-maestros h4 {
   border-radius: 5%;
   color: wheat;
   font-size: 1em;
@@ -1419,8 +1598,7 @@ header {
   /* Si se da un border-radius*/
   margin-top: 5%;
 }
-
-.requisitos {
+.grid-container-kriya .requisitos {
   grid-row: 4/5;
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
   /* Si se da un border-radius*/
@@ -1430,7 +1608,7 @@ header {
   color: beige;
   padding: 10%;
 }
-.requisitos h5 {
+.grid-container-kriya .requisitos h5 {
   color: rgb(87, 11, 24);
   font-size: 1.8em;
   font-weight: bolder;
@@ -1438,12 +1616,22 @@ header {
   margin-top: 2%;
   margin-bottom: 5%;
 }
-.requisitos #req, .requisitos p {
+.grid-container-kriya .requisitos #req, .grid-container-kriya .requisitos p {
   font-size: 1.5em;
   text-align: justify;
 }
-.requisitos .video-kriya {
+.grid-container-kriya .requisitos .video-kriya {
   display: none;
+}
+
+.info-general-curso p {
+  color: rgb(87, 11, 24);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: justify;
+  border-bottom: 1px solid rgb(163, 58, 54); /* limite para línea de borde inferior */
+  padding-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 .video-kriya0 {
@@ -1451,12 +1639,12 @@ header {
   margin: 10% 0 10% 10%;
 }
 
-#formulario .form-width {
-  width: 88%;
+#formulario h5 {
+  margin-left: -25%;
 }
 #formulario .form-check .form-check-input {
   margin-top: 0.7em;
-  margin-left: 3%;
+  margin-left: 15%;
 }
 #formulario .form-check-input:checked {
   background-color: #c40909;
@@ -1465,10 +1653,10 @@ header {
 
 /*////////////////////////MEDIA QUERIES PANTALLA TABLET (kriya)/////////////////////////////*/
 @media screen and (min-width: 768px) {
-  .banner-textos h1 {
+  .banner-iniciacion .banner-textos h1 {
     font-size: 2em;
   }
-  .banner-textos p {
+  .banner-iniciacion .banner-textos p {
     font-size: 2em;
     padding: 2%;
   }
@@ -1479,7 +1667,10 @@ header {
     margin-left: 5%;
   }
   .grid-container-kriya .info-general-curso p {
-    font-size: 2em;
+    color: rgb(87, 11, 24);
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: justify;
   }
   .grid-container-kriya .maestros h3 {
     font-size: 3em;
@@ -1503,12 +1694,12 @@ header {
   .grid-container-kriya .maestros .grid-maestros h4 {
     font-size: 2em;
   }
-  .requisito2 {
+  .grid-container-kriya .requisito2 {
     grid-row: 4/5;
     padding: 5%;
     margin-bottom: 10%;
   }
-  .requisito2 h5 {
+  .grid-container-kriya .requisito2 h5 {
     color: rgb(87, 11, 24);
     font-size: 2.5em;
     font-weight: bold;
@@ -1516,41 +1707,41 @@ header {
     margin-top: 2%;
     margin-bottom: 5%;
   }
-  .requisito2 #req, .requisito2 p {
+  .grid-container-kriya .requisito2 #req, .grid-container-kriya .requisito2 p {
     font-size: 2em;
     text-align: justify;
   }
-  .requisito2 h6 {
+  .grid-container-kriya .requisito2 h6 {
     text-align: center;
   }
-  .requisito2 iframe {
+  .grid-container-kriya .requisito2 iframe {
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
     /* Si se da un border-radius*/
     border-radius: 10%;
     margin-left: 8%;
   }
-  .requisito2 .video-kriya {
+  .grid-container-kriya .requisito2 .video-kriya {
     display: block;
   }
   .video-kriya0 {
     display: none;
   }
-  #formulario .form-width {
-    width: 70%;
+  #formulario .form-check {
+    white-space: nowrap;
   }
   #formulario .form-check .form-check-input {
-    margin-left: 18%;
+    margin-left: -15%;
   }
 }
 /*////////////////////////MEDIA QUERIES PANTALLA DESKTOP (kriya)/////////////////////////////*/
 @media screen and (min-width: 1280px) {
-  .banner-textos {
-    margin-left: 10%;
+  .banner-iniciacion .banner-textos {
+    margin-left: 3%;
   }
-  .banner-textos h1 {
+  .banner-iniciacion .banner-textos h1 {
     font-size: 3.5em;
   }
-  .banner-textos p {
+  .banner-iniciacion .banner-textos p {
     font-size: 2.5em;
   }
   .grid-container-kriya { /*grilla principal de la página*/
@@ -1559,7 +1750,6 @@ header {
     grid-template-rows: repeat(4, auto);
     column-gap: 5%;
     margin-left: 3%;
-    /*informacion general del instructorado con lineas para separar la info*/
   }
   .grid-container-kriya .info-general-curso { /*primera seccion*/
     grid-row: 1/2;
@@ -1584,6 +1774,9 @@ header {
   .grid-container-kriya .info-general-curso a {
     display: none;
   }
+  .grid-container-kriya .info-general-curso p {
+    font-size: 2em;
+  }
   .grid-container-kriya .imgs-instructorado {
     /* Si se da un margen*/
     margin: 0% 5%;
@@ -1592,8 +1785,8 @@ header {
   }
   .grid-container-kriya .grid-images2 {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 5%;
+    grid-template-rows: 55% 45%;
+    row-gap: 12%;
     grid-template-columns: auto;
     /* asi el link ocupa todo el espacio disponibleee */
   }
@@ -1605,25 +1798,17 @@ header {
   }
   .grid-container-kriya .grid-images2 img {
     width: 100%;
-    height: 85%;
+    height: 100%;
     /* Si se da un margen*/
     border-radius: 2%;
   }
   .grid-container-kriya .yogas {
-    background-image: linear-gradient(rgba(143, 13, 13, 0.6), rgba(255, 81, 0, 0.5));
-    background-size: cover;
     margin-left: 2%;
     padding-top: 10%;
     margin-right: 5%;
-    margin-top: 2%;
+    margin-top: 10%;
     grid-row: 2/3;
     grid-column: 1/4;
-  }
-  .grid-container-kriya .yogas img {
-    width: 5%;
-    height: 5%;
-    /* Si se da un margen*/
-    margin: 0 0 0% 10%;
   }
   .grid-container-kriya .yogas .yoga-info {
     display: flex;
@@ -1633,52 +1818,44 @@ header {
     flex-direction: column;
   }
   .grid-container-kriya .yogas .yoga-info h3 {
-    font-weight: bolder;
     color: wheat;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: justify;
   }
   .grid-container-kriya .yogas .yoga-info p {
     color: wheat;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     text-align: justify;
     margin-right: 10%;
   }
-  .grid-container-kriya.maestros { /*segunda seccion docentes*/
+  .grid-container-kriya .maestros { /*segunda seccion docentes*/
     grid-row: 3/4;
     grid-column: 1/4;
-  }
-  .grid-container-kriya .pago {
-    /* Si se da un margen*/
-    margin: 0% 0 0 10%;
-    grid-row: 4/5;
-    grid-column: 1/4;
-    row-gap: 0%;
-  }
-  .grid-container-kriya .pago .row {
-    margin-bottom: 2rem;
-  }
-  .grid-container-kriya .info-general-curso p {
-    font-size: 2em;
+    margin-top: -10%;
   }
   .grid-container-kriya .maestros h3 {
-    width: 215%;
     font-weight: bolder;
-    margin-top: 20%;
+    margin: 20% 0 2% 3%;
+    width: 90%;
   }
   .grid-container-kriya .maestros p {
-    width: 200%;
+    width: 80%;
     margin-left: 8%;
+    line-height: 2em;
   }
   .grid-container-kriya .maestros .grid-maestros {
+    margin-top: -8%;
     grid-template-rows: repeat(2, auto);
-    grid-template-columns: repeat(4, auto);
-    column-gap: 29%;
-    row-gap: 5%;
-    margin-bottom: 30%;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 4%;
+    row-gap: 2%;
+    margin-bottom: 20%;
   }
   .grid-container-kriya .maestros .grid-maestros img {
-    width: 150%;
-    height: 50%;
+    width: 80%;
+    height: 45%;
     /* Si se da un margen*/
     border-radius: 50%;
     margin-left: 25%;
@@ -1689,11 +1866,20 @@ header {
     font-size: 2em;
     font-weight: bolder;
     text-align: center;
-    width: 100%;
-    margin-left: 50%;
+    margin-left: 10%;
     width: 110%;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
     /* Si se da un border-radius*/
+  }
+  .grid-container-kriya .pago {
+    /* Si se da un margen*/
+    margin: 0% 0 0 10%;
+    grid-row: 4/5;
+    grid-column: 1/4;
+    row-gap: 0%;
+  }
+  .grid-container-kriya .pago .row {
+    margin-bottom: 2rem;
   }
   .grid-container-kriya .requisito2 {
     display: flex;
@@ -1719,11 +1905,8 @@ header {
     /* Si se da un border-radius*/
     border-radius: 10%;
   }
-  #formulario .form-width {
-    width: 50%;
-  }
   #formulario .form-check .form-check-input {
-    margin-left: 15%;
+    margin-left: -15%;
   }
 }
 /*----------------------------------------pagina de contacto-------------------------------------------------*/
@@ -1733,7 +1916,6 @@ header {
 }
 
 #contacto-textos {
-  /* background-color: $text-bg-color2;*/
   color: beige;
   width: 100%;
   height: 100%;
@@ -1747,15 +1929,17 @@ header {
   text-align: center;
   background-color: rgba(143, 13, 13, 0.6);
 }
-#contacto-textos h5 {
+#contacto-textos h4 {
   /* Si se da un margen*/
-  margin: 5% 0 0 33%;
-  font-size: 1.8em;
+  margin: 5% 0 0 30%;
+  font-size: 2em;
 }
 #contacto-textos p {
   color: beige;
   font-size: 1.3em;
   text-align: center;
+  line-height: 0.5em;
+  margin-top: 5%;
 }
 
 #grid-contacto {
@@ -1767,26 +1951,21 @@ header {
   background-color: rgba(0, 0, 0, 0.6);
   padding-top: 5%;
 }
-
-#email {
+#grid-contacto #email {
   grid-area: email;
 }
-
-#direccion {
+#grid-contacto #direccion {
   grid-area: direccion;
 }
-
-#horario {
+#grid-contacto #horario {
   grid-area: horario;
 }
-
-#telefono {
+#grid-contacto #telefono {
   grid-area: telefono;
 }
-
-.icono-contacto {
+#grid-contacto .icono-contacto {
   width: 25%;
-  height: 23%;
+  height: 25%;
   /* Si se da un margen*/
   margin: 0 0 0 40%;
 }
@@ -1804,8 +1983,7 @@ header {
   margin-bottom: -6%;
   padding: 6%;
 }
-
-#contacto-redes {
+#fondo-redes #contacto-redes {
   display: flex;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.6);
@@ -1815,8 +1993,7 @@ header {
   /* Si se da un margen*/
   margin: 6% 0 10% 0%;
 }
-
-.item img {
+#fondo-redes #contacto-redes .item img {
   width: 40%;
   height: auto;
   /* Si se da un margen*/
@@ -1833,103 +2010,93 @@ header {
   margin: 0 0 10% 10%;
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
-
-.bg-item-acordeon {
+#acordeon h2 {
+  font-size: 1.8em;
+  padding-top: 3%;
+  font-weight: bold;
+}
+#acordeon .bg-item-acordeon {
   color: beige;
   background-color: #e68671;
 }
-
-.acordeon-respuesta {
+#acordeon .acordeon-respuesta {
   font-size: 1.5em;
   background-color: #dba498;
 }
-
-.accordion {
-  --bs-accordion-active-bg: #d88674;
+#acordeon .accordion {
+  --bs-accordion-active-bg: $bg-form;
   --bs-accordion-active-color: #523029;
   --bs-accordion-btn-focus-box-shadow: none;
 }
 
-/*////FORMULARIO CONTACTO///////////////*/
-#form {
-  width: 90%;
-  /* Si se da un margen*/
-  margin: 12% auto 12% auto;
-  padding: 20px;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  /* Si se da un border-radius*/
-  border-radius: 5%;
-  background-color: #e68671;
+/*//////////FORMULARIO CONTACTO///////////////*/
+#formulario {
+  margin: 30% 0;
 }
-#form h2 {
+#formulario h2 {
   color: beige;
   text-align: center;
   background-color: rgb(163, 58, 54);
-  width: 100%;
 }
-
-.form-group {
+#formulario .form-group {
   margin-bottom: 5%;
+  width: 80%;
+  margin-left: 10%;
 }
-
-.form-group-inline {
+#formulario .form-group-inline {
+  width: 88%;
+  margin-left: 1%;
   display: flex;
   justify-content: space-between;
 }
-
-.form-group label {
+#formulario .form-group label {
   color: beige;
   font-size: 1.5em;
   font-weight: bold;
   display: block;
   margin-bottom: 1%;
 }
-
-input[type=text],
-input[type=tel],
-input[type=email],
-textarea,
-select {
+#formulario input[type=text],
+#formulario input[type=tel],
+#formulario input[type=email],
+#formulario textarea,
+#formulario select {
   width: 100%;
   padding: 1%;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
 }
-
-textarea {
+#formulario textarea {
   resize: vertical;
 }
-
-.options {
+#formulario .options {
   display: flex;
   flex-direction: column;
 }
-.options input[type=radio] {
+#formulario .options input[type=radio] {
   margin-right: 5%;
 }
-
-input:focus,
-select:focus,
-textarea:focus {
+#formulario input:focus,
+#formulario select:focus,
+#formulario textarea:focus {
   outline: 2px solid rgb(153, 31, 31);
 }
-
-input[type=radio]:focus {
+#formulario input[type=radio]:focus {
   outline: none;
 }
 
 @media screen and (min-width: 768px) {
-  .icono-contacto {
-    width: 25%;
-    height: 32%;
-    /* Si se da un margen*/
-    margin: 0 0 0 37%;
-  }
   #grid-contacto {
     row-gap: 5%;
     background-color: rgba(0, 0, 0, 0.6);
     padding-bottom: 3%;
+  }
+  #grid-contacto .icono-contacto {
+    width: 25%;
+    height: 34%;
+    /* Si se da un margen*/
+    margin: 0 0 0 37%;
   }
   #contacto-textos { /*fondo en los textos*/
     color: beige;
@@ -1945,10 +2112,10 @@ input[type=radio]:focus {
     background-color: rgba(143, 13, 13, 0.6);
     padding: 5%;
   }
-  #contacto-textos h5 {
+  #contacto-textos h4 {
     /* Si se da un margen*/
-    margin: 5% 0 5% 35%;
-    font-size: 2.5em;
+    margin: 5% 0 5% 30%;
+    font-size: 3.5em;
   }
   #contacto-textos p {
     color: beige;
@@ -1957,31 +2124,37 @@ input[type=radio]:focus {
     text-align: center;
     margin-left: 3%;
   }
+  #acordeon h2 {
+    font-size: 2em;
+    padding-top: 3%;
+    font-weight: bolder;
+  }
   #fondo-redes h2 {
     color: beige;
     font-size: 3.5em;
     text-align: center;
     background-color: rgba(143, 13, 13, 0.6);
   }
-  #form {
+  #formulario {
     width: 60%;
     /* Si se da un margen*/
     margin: 12% auto 12% auto;
     padding: 5%;
+  }
+  #formulario .form-group {
+    margin-bottom: 5%;
+    width: 60%;
+    margin-left: 20%;
+  }
+  #formulario .form-group-inline {
+    width: 75%;
+    margin-left: 5%;
   }
   #topic option {
     font-size: 1%;
   }
 }
 @media screen and (min-width: 1280px) {
-  #grid-contacto {
-    grid-template-columns: 25% repeat(3, 1fr);
-    grid-template-areas: "email direccion horario telefono";
-    margin-bottom: 6%;
-  }
-  #icono-contacto {
-    margin-left: 38%;
-  }
   #contacto-textos { /*fondo en los textos*/
     background-color: unset;
     padding-bottom: 2%;
@@ -1989,12 +2162,24 @@ input[type=radio]:focus {
   #contacto-textos h1 {
     font-size: 4.5em;
   }
-  #contacto-textos h5 {
+  #contacto-textos h4 {
     font-size: 2em;
-    margin-left: 38%;
+    margin-left: 36%;
   }
   #contacto-textos p {
     font-size: 1.5em;
+  }
+  #grid-contacto {
+    grid-template-columns: 25% repeat(3, 1fr);
+    grid-template-areas: "email direccion horario telefono";
+    margin-bottom: 6%;
+  }
+  #grid-contacto #icono-contacto {
+    margin-left: 38%;
+    width: 25%;
+    height: 40%;
+    /* Si se da un margen*/
+    margin: 0 0 0 37%;
   }
   #fondo-redes {
     margin-top: 1%;
@@ -2005,7 +2190,7 @@ input[type=radio]:focus {
     margin-bottom: 6%;
     padding: 6%;
   }
-  .item img {
+  #fondo-redes #contacto-redes .item img {
     width: 20%;
     height: auto;
     /* Si se da un margen*/
@@ -2016,12 +2201,20 @@ input[type=radio]:focus {
     /* Si se da un margen*/
     margin: 0 0 0 25%;
   }
-  #form {
-    max-width: 40%;
-    padding: 2% 5%;
+  #formulario {
+    width: 40%;
   }
-  #form .form-group select option {
+  #formulario .form-group {
+    margin-bottom: 5%;
+    width: 60%;
+    margin-left: 20%;
+  }
+  #formulario .form-group select option {
     font-size: 1.5em !important;
+  }
+  #formulario .form-group-inline {
+    width: 75%;
+    margin-left: 5%;
   }
 }
 

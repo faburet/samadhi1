@@ -1,6 +1,10 @@
 .cuadro-texto {
   /*cuadros de informacion sobre el curso con fotos*/
-  background-color: rgba(143, 13, 13, 0.6);
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  padding: 25px;
+              background-image: linear-gradient($text-bg-color1, $background-color2);
+              box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+              padding: 5%;
  }
+.cuadro-texto2 {
+               background-image: linear-gradient($text-bg-color1, $background-color3);
+               padding: 5%;
+               box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);}

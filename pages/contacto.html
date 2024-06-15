@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>SAMADHI YOGA</title>
+    <!-- Titulo y Meta Descripcion para SEO -->
+    <title>
+      SAMADHI YOGA CONTACTO - Escuela de Yoga en General Roca, Río Negro,
+      Argentina
+    </title>
+    <meta
+      name="description"
+      content="Samadhi Yoga es una escuela dedicada a la enseñanza de yoga en General Roca, Río Negro, Argentina. Ofrecemos cursos de Instructorado, Profesorado y Kriya Yoga." />
+    <meta
+      name="keywords"
+      content="yoga, Samadhi Yoga, escuela de yoga, General Roca, Río Negro, Argentina, Kriya Yoga, Instructorado de Yoga, Profesorado de Yoga" />
+    <meta name="author" content="Samadhi Yoga" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,7 +32,7 @@
       <!--Titulos y logo para Desktop-->
       <div>
         <img
-          src="../img/klipartz2.png"
+          src="../img/logo-samadhi-yoga.png"
           id="logo-principal0"
           alt="logo principal de escuela de yoga" />
         <div class="name">
@@ -42,18 +54,15 @@
         </div>
       </div>
       <!--fin de titulos para desktop-->
-
       <!--comienzo de la navbar de BOOSTRAP en movil-->
-
       <nav class="navbar navbar-expand-lg navbar-expand-md bg-menu ms-0 mt-0">
         <div class="container-fluid">
           <a id="imagen-menu" href="#"
             ><img
               id="logo-principal"
-              src="../img/logo_principal3.png"
+              src="../img/logo_principal-mv.png"
               alt="silueta de hombre meditando frente al sol"
           /></a>
-
           <div class="name">
             <span>SAMADHI YOGA</span>
           </div>
@@ -67,11 +76,8 @@
             aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            <!--"todos los "aria" son para mejorar la accesibilidad, no cambia la funcionalidad!-->
-            <!--"aria-controls" asocia semanticamene el elemento al boton-->
           </button>
           <!--fin del boton de menú-->
-
           <!--contenido de opciones del menú-->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <p id="subname-Mb">Union cuerpo-mente-alma</p>
@@ -156,7 +162,6 @@
         </div>
       </nav>
     </header>
-
     <main>
       <!--cuadro principal de contacto: mail/direccion/horario/telefono-->
       <section id="banner-contacto">
@@ -168,7 +173,7 @@
                 class="icono-contacto"
                 src="../img/iconomail.png"
                 alt="icono de mail" />
-              <h5>&nbsp;&nbsp;E-mail</h5>
+              <h4>&nbsp;&nbsp;E-mail</h4>
               <p>Samadhiyoga@gmail.com</p>
             </div>
             <div id="direccion">
@@ -176,7 +181,7 @@
                 class="icono-contacto"
                 src="../img/iconocasa.png"
                 alt="icono de casa" />
-              <h5>Direccion</h5>
+              <h4>Direccion</h4>
               <p>Santa Rosa 1225</p>
               <p>General Roca, Río Negro</p>
               <p>Argentina</p>
@@ -186,7 +191,7 @@
                 class="icono-contacto"
                 src="../img/iconoreloj.png"
                 alt="icono de reloj" />
-              <h5>Horarios</h5>
+              <h4>Horarios</h4>
               <p>Lunes a Sabado</p>
               <p>de 06 hs a 20 hs</p>
             </div>
@@ -195,7 +200,7 @@
                 class="icono-contacto"
                 src="../img/iconotel.png"
                 alt="icono de teléfono" />
-              <h5>Telefono</h5>
+              <h4>Telefono</h4>
               <p>+54 2995889940</p>
             </div>
           </div>
@@ -219,7 +224,6 @@
           </a>
         </div>
       </section>
-
       <!--ACORDEON-DE BOOSTRAP PARA PREGUNTAS FRECUENTES-->
       <section id="acordeon">
         <h2>PREGUNTAS FRECUENTES</h2>
@@ -303,73 +307,73 @@
         </div>
       </section>
       <!--Formulario de contacto-->
-      <section id="form">
-        <h2>Formulario de Contacto</h2>
-        <form action="#" method="POST">
-          <div class="form-group">
-            <label for="topic"
-              >Me gustaría contactarlos por el siguiente tema:</label
-            >
-            <select name="topic" id="topic" required>
-              <option value="" disabled selected hidden>
-                Selecciona una opción
-              </option>
-              <option value="Instructorado de Yoga">
-                Instructorado de Yoga
-              </option>
-              <option value="Profesorado de Yoga">Profesorado de Yoga</option>
-              <option value="Iniciación en Kriya">Iniciación en Kriya</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="firstName">Nombres:</label>
-            <input type="text" id="firstName" name="firstName" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Apellido:</label>
-            <input type="text" id="lastName" name="lastName" required />
-          </div>
-          <div class="form-group-inline">
+      <section id="formulario">
+        <div class="container">
+          <h2>Formulario de Contacto</h2>
+          <form action="#" method="POST">
             <div class="form-group">
-              <label for="phone">Tel./Wsp:</label>
-              <input type="tel" id="phone" name="phone" required />
+              <label for="topic">Me contacto por el sgte. tema:</label>
+              <select name="topic" id="topic" required>
+                <option value="" disabled selected hidden>
+                  Selecciona una opción
+                </option>
+                <option value="Instructorado de Yoga">
+                  Instructorado de Yoga
+                </option>
+                <option value="Profesorado de Yoga">Profesorado de Yoga</option>
+                <option value="Iniciación en Kriya">Iniciación en Kriya</option>
+              </select>
             </div>
             <div class="form-group">
-              <label for="email">E-mail:</label>
-              <input type="email" id="email" name="email" required />
+              <label for="firstName">Nombres:</label>
+              <input type="text" id="firstName" name="firstName" required />
             </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Escriba su mensaje aquí..."
-              required></textarea>
-          </div>
-          <div class="form-group">
-            <h5>¿Cómo supiste de la escuela?</h5>
-            <div class="options">
-              <label
-                ><input type="radio" name="source" value="Google" />
-                Google</label
-              ><br />
-              <label
-                ><input type="radio" name="source" value="Facebook" />
-                Facebook</label
-              ><br />
-              <label
-                ><input type="radio" name="source" value="Instagram" />
-                Instagram</label
-              ><br />
-              <label
-                ><input type="radio" name="source" value="Otro" /> Otro</label
-              >
+            <div class="form-group">
+              <label for="lastName">Apellido:</label>
+              <input type="text" id="lastName" name="lastName" required />
             </div>
-          </div>
-          <button class="btn-form" type="submit">Aceptar</button>
-        </form>
+            <div class="form-group-inline">
+              <div class="form-group">
+                <label for="phone">Tel./Wsp:</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Escriba su mensaje aquí..."
+                required></textarea>
+            </div>
+            <div class="form-group">
+              <h5>¿Cómo supiste de la escuela?</h5>
+              <div class="options">
+                <label
+                  ><input type="radio" name="source" value="Google" />
+                  Google</label
+                ><br />
+                <label
+                  ><input type="radio" name="source" value="Facebook" />
+                  Facebook</label
+                ><br />
+                <label
+                  ><input type="radio" name="source" value="Instagram" />
+                  Instagram</label
+                ><br />
+                <label
+                  ><input type="radio" name="source" value="Otro" /> Otro</label
+                >
+              </div>
+            </div>
+            <button class="btn-form" type="submit">Aceptar</button>
+          </form>
+        </div>
       </section>
     </main>
     <footer>
@@ -377,7 +381,7 @@
         <div id="logo-footer">
           <img
             id="logo-footer-img"
-            src="../img/klipartz2.png"
+            src="../img/logo-samadhi-yoga.png"
             alt="logo principal de escuela de yoga" />
           <div id="name-footer">
             <span>SAMADHI</span>

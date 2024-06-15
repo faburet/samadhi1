@@ -1,81 +1,85 @@
 /*-----------------------------------------INDEX-------------------------------------------------*/
-#title-first {  /*primer titulo del main con imagen de fondo*/
-    @include sizes-margin (100%,100%,6% 0);
-    grid-area: title-first;
-    background-image: url(../img/banner-inicio.jpg);
-    background-size: cover;
-    }
-  .title-h1 {@include general-textos ($text-color,$fontsize-large,bolder,center,$text-bg-color1); 
-     padding: 6% 0;
-  }
-  .title-h2 {@include general-textos ($text-color,$fontsize-large,null,center,$text-bg-color1);
-    padding: 5% 0;
-  }
+
 /*grid principal con todas las secciones*/
   .grid_container {
-    /*esta es la grilla para movil*/
-    display: grid;
-    grid-template-rows: 10% repeat(3, 1fr) auto;
-    grid-template-areas:
-      "title-first"
-      "profesorado"
-      "instructorado"
-      "iniciacion"
-      "info-escuela";
-    }
+                  /*esta es la grilla para movil*/
+                  display: grid;
+                  grid-template-rows: 10% repeat(3, 1fr) auto;
+                  grid-template-areas:
+                    "title-first"
+                    "profesorado"
+                    "instructorado"
+                    "iniciacion"
+                    "info-escuela";
+                    #title-first {  /*primer titulo del main con imagen de fondo*/
+                                @include sizes-margin (100%,100%,6% 0);
+                                grid-area: title-first;
+                                background-image: url(../img/banner-inicio.jpg);
+                                background-size: cover;
+                                .title-h1 {@include general-textos ($text-color,$fontsize-large,bolder,center,$text-bg-color1); 
+                                padding: 6% 0;
+                                }
+                                .title-h2 {@include general-textos ($text-color,$fontsize-large,null,center,$text-bg-color1);
+                                padding: 5% 0;
+                                }
+                    }
+                    /*///////estilado info de cursos//////*/
+                    .profesorado, .instructorado {
+                                                 .contiene-info-curso{ @extend %cuadrito-curso; 
+                                                 } 
+                    }
+                   
+
+}
   
-  /*///////////////////////////////estilado info de cursos/////////////////////////////////////////////*/
+ 
+/*.grid_container {*/.iniciacion 
+                  {div {@extend %cuadrito-curso;}
+                  }
+/*}  */
+
   
-  .contiene-info-curso,
-  .iniciacion div {
-    @include sizes-margin (90%,null,0 0 0 5%);
-    background-color: $text-color;
-    padding-bottom: 5%;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  }
+  
   .profesorado,
   .instructorado,
   .iniciacion { /*etiquetita de cursos*/
-    div div {
-      @include general-textos($opcion-activa, $fontsize-mediumx, bolder, null, $background-color2);
-      @include sizes-margin($fontsize-super, null, 0 0 5% 35%);
-      @include shadow-border(0 0 5px 5px);
-      padding: 1% 0;
-      &:hover{background-color: $hover-color-btn}
-    }
-    h3 {
-      @include general-textos(null, $fontsize-large, 900, null, null);
-      font-family: $family-font2;
-    }
-  
-    div p {
-      font-size: $fontsize-large;
-    }
-  
-    a {
-      color: #000000;
-      text-decoration: none;
-  
-      &:active {
-        color: #ff6600;
-      }
-
-    }
-    &.profesorado {
-      grid-area: profesorado;
-      text-align: center; 
-    }
-  
-    &.instructorado {
-      grid-area: instructorado;
-      text-align: center;
-    }
-  
-    &.iniciacion {
-      grid-area: iniciacion;
-      text-align: center;
-      margin-top: 4%;
-    }
+              div div {
+                    @include general-textos($opcion-activa, $fontsize-mediumx, bolder, null, $background-color2);
+                    @include sizes-margin($fontsize-super, null, 0 0 5% 35%);
+                    @include shadow-border(0 0 5px 5px);
+                    padding: 1% 0;
+                    &:hover{background-color: $hover-color-btn}
+                }
+                h3 {
+                   @include general-textos(null,$fontsize-large,900, null, null);
+                  font-family: $family-font2;
+                }
+                div { 
+                    p {
+                      font-size: $fontsize-large;
+                    }
+                }
+                a {
+                  color: #000000;
+                  text-decoration: none;
+                  &:active{
+                          color: #ff6600;
+                  }
+                }
+                &.profesorado {
+                              grid-area: profesorado;
+                              text-align: center; 
+                }
+                &.instructorado {
+                                grid-area: instructorado;
+                                text-align: center;
+                } 
+                &.iniciacion {
+                             grid-area: iniciacion;
+                             text-align: center;
+                             margin-top: 4%;
+                }
+              
   }
   
   .profesorado,.instructorado,.iniciacion{ 
@@ -111,13 +115,13 @@
     
   @media screen and (max-width: 767px) {
     #info-escuela {
-      background-image: url(../img/fuego.png);
-      background-size: cover;
+      background-image: url(../img/loto2.png);
+      background-size:cover;
       font-size: $fontsize-medium; // Supongo que $fontsize-medium es una variable Sass
     }
   
     #info-escuela p {
-      @include general-textos($text-color, null, bolder, justify, $text-bg-color2);
+      @include general-textos(black, null, bolder, justify,null);
       @include sizes-margin(88%, null, 1% 0 0 6%);
       padding: 2%;
       border-radius: 5%;
@@ -128,7 +132,7 @@
     }
   
     #info-escuela p {
-      display: none; // Esto es redundante si ya tienes #info-escuela p definido más arriba
+      display: none; 
     }
   
     #info-escuela p:nth-of-type(-n+2) {
@@ -138,17 +142,32 @@
   
 /*///////////////////////////////MEDIA QUERY PANTALLA TABLET (index)///////////////////////////////////*/
 @media screen and (min-width: 768px){ 
+
   .grid_container {
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: 1fr 1fr;
-    column-gap: 5%;
-    row-gap: 0px;
-    grid-template-areas:
-      "title-first title-first"
-      "profesorado instructorado"
-      "iniciacion iniciacion"
-      "info-escuela img-escuela";
+                  display: grid;
+                  grid-template-rows: repeat(4, auto);
+                  grid-template-columns: 1fr 1fr;
+                  column-gap: 5%;
+                  row-gap: 0px;
+                  grid-template-areas:
+                    "title-first title-first"
+                    "profesorado instructorado"
+                    "iniciacion iniciacion"
+                    "info-escuela img-escuela";
+
+      #title-first {
+        height: auto;
+        .title-h1 {
+        padding: 9% 0;
+        @include general-textos(null, 4em, null, center, $text-bg-color1);
+        width: 100%;
+        }
+        .title-h2 {
+                  padding: 5% 0;
+                  @include general-textos(null, 4em, null, center, $text-bg-color1);
+                  width: 100%;
+         }
+    }
    }
    #imagen-menu,
    #name-Mb,
@@ -160,9 +179,7 @@
      display: grid;
     }
 
-    #title-first {
-      height: auto;
-    }
+
 
     .imagenes-cursos {  @include sizes-margin (90%,60%,0%);
       display: inline-block;
@@ -170,17 +187,7 @@
     .iniciacion img {  @include sizes-margin (75%,null,5% 0 0 0);}
 
     
-    .title-h1 {
-      padding: 9% 0;
-      @include general-textos(null, 4em, null, center, $text-bg-color1);
-      width: 100%;
-    }
 
-    .title-h2 {
-      padding: 5% 0;
-      @include general-textos(null, 4em, null, center, $text-bg-color1);
-      width: 100%;
-    }
     
     #img-escuela2 {
       display: block;
@@ -193,23 +200,25 @@
 
   /*///////////////////////////////estilado info de cursos TABLET//////////////////////////////////////////*/
 
-  .profesorado div div,      /*etiquetita de curso*/
-  .instructorado div div {
-    margin-left: 35%;
+  .profesorado,      /*etiquetita de curso*/
+  .instructorado {div {
+                      div {margin-left: 35%;}
+                 }    
   }
 
-  .iniciacion div {/*es como .contiene-info-curso*/
-    @include sizes-margin(64%, null, 0 0 0 18%);
-    background-color: $text-color;
-    padding-bottom: 5%;
-    text-align: center;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
-
-    div {
-      @include general-textos($text-color, $fontsize-mediumx, bolder, null, $main-color);
-      @include sizes-margin($fontsize-super, null, 0 0 5% 40%);
-    }
-  }
+  .iniciacion{ 
+              div {/*es como .contiene-info-curso*/
+                  @include sizes-margin(64%, null, 0 0 0 18%);
+                  background-color: $text-color;
+                  padding-bottom: 5%;
+                  text-align: center;
+                  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+                  div {
+                      @include general-textos($text-color, $fontsize-mediumx, bolder, null, $main-color);
+                      @include sizes-margin($fontsize-super, null, 0 0 5% 40%);
+                    }
+              }   
+            }            
 
   .img-escuela {
     display: none;
@@ -238,7 +247,10 @@
 /*////////////////////////MEDIA QUERIES PANTALLA DESKTOP (index)/////////////////////////////*/
 
   @media screen and (min-width: 1280px) { 
-    .title-h1, .title-h2 {@include general-textos (null,$fontsize-super,null,center,$text-bg-color1)}
+    #title-first {
+                 .title-h1, .title-h2{
+                  @include general-textos (null,$fontsize-super,null,center,$text-bg-color1)}
+    }
   /*///////////////////////////////estilado info de cursos Desktop//////////////////////////////////////////*/
 
   /*etiquetita de curso*/

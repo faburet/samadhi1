@@ -6,6 +6,12 @@
       $text-bg-color1, $background-color3),
       url("../img/profesorado.jpeg");
       @extend %banner;
+      .banner-textos {
+        background-color: $text-bg-color2;  /*fondo en los textos*/
+        h1 { @include general-textos ($text-color,1.7em,bolder,center,$text-bg-color1); padding: 3% 0};
+        p { @include general-textos ($text-color,$fontsize-medium,bold,center,null);
+        padding: 2%;}
+} 
 }
 .animate__fadeInUp {
     --animate-duration: 1s; /* Ajusta la duración de la animación */
@@ -30,73 +36,80 @@
 }
   
 .profesor {
-  display: grid;
-  grid-template-columns: auto;
+          display: grid;
+          grid-template-columns: auto;
+          .cuadro-texto {     /*cuadros de informacion sobre el curso con fotos*/
+                        @include sizes-margin (90%,null,10% 0 0 5%);
+                        img { @include sizes-margin (95%,auto,0 0 0 2%);}
+                        .texto { @include general-textos ($text-color1,$fontsize-medium,bolder,justify,null)}
+          }
 }
-  
-.cuadro-texto {     /*cuadros de informacion sobre el curso con fotos*/
-     @include sizes-margin (90%,null,10% 0 0 5%);
-     img { @include sizes-margin (95%,auto,0 0 0 2%);}
-}
-  
-.texto { @include general-textos ($text-color1,$fontsize-medium,bolder,justify,null)}
-
-  
-#formulario {
-            .container {  /*formulario*/
-            border: 2px solid #800000;
-            @include shadow-border (5%);
-            padding: 20px;
-            background-color:$bg-form;
-            }
-            h5 {@include general-textos ($text-color1,$fontsize-large,bolder,center,null)}
-            .form-group {label{margin-left:6%}}
-            .form-width {
-              width: 80%;
-              margin-bottom: 10%;
-            }
-}
- 
-.rotulo { @include general-textos (null,1.2em,null,center,null);
-    margin-right: 10%;
-}
-.col-md-6 {h4 { @include general-textos ($text-color1,null,null,center,null)}
-} 
-
+#formulario {.form-group{width: 90%; margin-left: 7%;} }
  ///////////////////////////////////////////MEDIA QUERY PANTALLA TABLET (profesorado)///////////////////////////////////*/
  @media screen and (min-width: 768px) {
- #formulario {.form-width {width:68%}}
- }
-  
+  .banner-profesorado{
+                     .banner-textos {
+                     h1 { font-size:$fontsize-large};
+                     p {font-size:$fontsize-large;
+                       padding: 2%};
+    } 
+  }
+  .loto {   
+        p {@include general-textos ($text-color1,$fontsize-medium,null,justify,null)}
+  }
+
+  .profesor {
+            .cuadro-texto {     /*cuadros de informacion sobre el curso con fotos*/
+                  @include sizes-margin (90%,null,10% 0 0 5%);
+                  img { @include sizes-margin (95%,auto,0 0 0 2%);}
+                  .texto { @include general-textos ($text-color1,$fontsize-mediumx,bolder,justify,null)}
+    }
+  }
+  #formulario {.form-group{
+                          .form-control{width: 200%; margin-left: -50%;}
+                        }
+              }
+}
 ///////////////////////////////////////////MEDIA QUERY PANTALLA DESKTOP (profesorado)///////////////////////////////////*/
-  @media screen and (min-width: 1280px) {
-    .loto {  /*seccion imagen de loto e informacion sobre profesorado*/
+@media screen and (min-width: 1280px) {
+  .banner-profesorado{
+                     .banner-textos {
+                                    margin-left: 3%;
+                                    h1 {font-size:$fontsize-xxlarge;}
+                                    p {font-size:$fontsize-xlarge;}
+                      }
+    }
+  .loto {  /*seccion imagen de loto e informacion sobre profesorado*/
         display: flex;
         img {
-          margin-left: 0%;
+            margin-left: 0%;
         }
         p {
-          font-size:$fontsize-small;
+          font-size:$fontsize-medium;
           line-height: 200%;
           margin-left: 6%;}   
-      }
-    .cuadro-texto{
-    display: flex;
-    width: 80%;
-    margin-left: 10%;
-          img {@include sizes-margin (50%,90%,4% 0 0 5%);
-          }
-          &:nth-child(2){
-            width: 95%;
-            margin-left: 3%; // Ajusta el ancho del segundo cuadro-texto
-          }
-    }
- 
-    #info-doc {display: flex; flex-direction: column; align-items: center;
-      justify-content: center;
-      text-align: center;}
-
-    #formulario {
-                .form-width {width: 50%}
-                }
+  }
+  .profesor {
+            .cuadro-texto{
+                         display: flex;
+                         width: 80%;
+                         margin-left: 10%;
+                         img {
+                             @include sizes-margin (50%,90%,4% 0 0 5%)
+                         }
+                         &:nth-child(2){
+                         width: 95%;
+                         margin-left: 3%; // Ajusta el ancho del segundo cuadro-texto
+                         }
+                         .texto { @include general-textos ($text-color1,$fontsize-medium,bolder,justify,null);
+                         }
+            }   
+  }
+  #info-doc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+  }
 }
